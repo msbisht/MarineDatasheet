@@ -1,0 +1,835 @@
+﻿@model MarineDataSheet.Datum
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>Datum</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Datasivun_numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datasivun_numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datasheet_revision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datasheet_revision)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datasheet_created_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datasheet_created_by)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Maximum_working_pressure__barg_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Maximum_working_pressure__barg_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cooling)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cooling)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C1_Voltage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C1_Voltage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C1_Frequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C1_Frequency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C1_Starting_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C1_Starting_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C2_Voltage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C2_Voltage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C2_Frequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C2_Frequency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.C2_Starting_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.C2_Starting_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Normal_working_pressure__barg_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Normal_working_pressure__barg_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity_at_normal_working_pressure__m__min_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity_at_normal_working_pressure__m__min_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity_at_normal_working_pressure__m__min__75_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity_at_normal_working_pressure__m__min__75_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity_at_normal_working_pressure__m__min__50_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity_at_normal_working_pressure__m__min__50_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity_at_normal_working_pressure__m__min__25_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity_at_normal_working_pressure__m__min__25_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity_at_normal_working_pressure__m__min__min)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity_at_normal_working_pressure__m__min__min)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volumetric_efficiency__)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volumetric_efficiency__)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Air_end_volume_per_revolution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Air_end_volume_per_revolution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shaft_power_at_normal_working_pressure__kW_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shaft_power_at_normal_working_pressure__kW_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shaft_power_at_normal_working_pressure__kW__75_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shaft_power_at_normal_working_pressure__kW__75_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shaft_power_at_normal_working_pressure__kW__50_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shaft_power_at_normal_working_pressure__kW__50_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shaft_power_at_normal_working_pressure__kW__25_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shaft_power_at_normal_working_pressure__kW__25_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shaft_power_at_normal_working_pressure__kW__min)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shaft_power_at_normal_working_pressure__kW__min)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Specific_power_consumption__kW_m3_min_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specific_power_consumption__kW_m3_min_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra_capacity__)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra_capacity__)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Minimum_working_pressure__barg_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Minimum_working_pressure__barg_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Frequency_min)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Frequency_min)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Frequency_max)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Frequency_max)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transmission_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transmission_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transmission__Gear__i_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transmission__Gear__i_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Motor_pulley_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Motor_pulley_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Air_end_pulley_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Air_end_pulley_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Maximum_ambient_temperature__C__)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Maximum_ambient_temperature__C__)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Compressed_air_temperature_above_cooling_medium_temperature__C__)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Compressed_air_temperature_above_cooling_medium_temperature__C__)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cooling_air_flow__m__s_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cooling_air_flow__m__s_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cooling_air_flow__m__s__water_cooled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cooling_air_flow__m__s__water_cooled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Maximum_cooling_air_pressure_drop__Pa_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Maximum_cooling_air_pressure_drop__Pa_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Water_in__C____Fresh_water_cooled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Water_in__C____Fresh_water_cooled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Water_out__C____Fresh_water_cooled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Water_out__C____Fresh_water_cooled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Water_in__C____Sea_water_cooled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Water_in__C____Sea_water_cooled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Water_out__C____Sea_water_cooled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Water_out__C____Sea_water_cooled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Extra_factor_for_water_flow_at_60__humidity_fresh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Extra_factor_for_water_flow_at_60__humidity_fresh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa___Serial_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa___Serial_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Minimum_water_inlet_pressure_with_zero_ba__bar___MPa___Parallel_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Minimum_water_inlet_pressure_with_zero_ba__bar___MPa___Parallel_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Minimum_water_inlet_pressure_with_zero_back__Serial__sea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Minimum_water_inlet_pressure_with_zero_back__Serial__sea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Minimum_water_inlet_pressure_with_zero_back__Parallel__sea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Minimum_water_inlet_pressure_with_zero_back__Parallel__sea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa__Oil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa__Oil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa__After)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa__After)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Maximum_inlet_pressure__barg_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Maximum_inlet_pressure__barg_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Water_in___out_T2___T3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Water_in___out_T2___T3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heat_dissipation__kW__EA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Heat_dissipation__kW__EA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heat_dissipation__kW__EW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Heat_dissipation__kW__EW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Main_motor___F_class__IP_55__kW_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Main_motor___F_class__IP_55__kW_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Main_motor_max_power)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Main_motor_max_power)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Main_motor_protection_details)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Main_motor_protection_details)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Main_motor_temperature_rise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Main_motor_temperature_rise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speed_of_rotation__rpm_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Speed_of_rotation__rpm_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speed_of_rotation__rpm__min)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Speed_of_rotation__rpm__min)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Motor_cos_fii)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Motor_cos_fii)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Motor_efficiency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Motor_efficiency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fan_motor__kW__EA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fan_motor__kW__EA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fan_motor__kW__EW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fan_motor__kW__EW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speed_of_rotation__rpm____fan_motor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Speed_of_rotation__rpm____fan_motor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voltage_tolerance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voltage_tolerance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hydraulic_main_motor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hydraulic_main_motor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hydraulic_motor_speed_of_rotation__Max_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hydraulic_motor_speed_of_rotation__Max_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hydraulic_motor_speed_of_rotation__Min_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hydraulic_motor_speed_of_rotation__Min_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hydraulic_oil_flow__l_min_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hydraulic_oil_flow__l_min_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hydraulic_oil_flow__l_min__min)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hydraulic_oil_flow__l_min__min)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hydraulic_oil_pressure__bar_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hydraulic_oil_pressure__bar_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hydraulic_oil_pressure__bar__min)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hydraulic_oil_pressure__bar__min)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fuse__max___1_Jännite__A)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fuse__max___1_Jännite__A)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fuse__max___2_Jännite__A)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fuse__max___2_Jännite__A)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Starting_current_Ia_In_DOL___Y_D___SOFT_START)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Starting_current_Ia_In_DOL___Y_D___SOFT_START)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Control_voltage__V_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Control_voltage__V_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oil_quantity__I_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oil_quantity__I_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oil_quantity_EA__I_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oil_quantity_EA__I_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oil_content__mg_m__)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oil_content__mg_m__)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Air_outlet_T1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Air_outlet_T1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Air_outlet_T1_water_cooled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Air_outlet_T1_water_cooled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Condensate_drain_T4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Condensate_drain_T4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pressure_Level__LpA__without_canopy_EA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pressure_Level__LpA__without_canopy_EA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pressure_Level__LpA__without_canopy_EW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pressure_Level__LpA__without_canopy_EW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pressure_Level__LpA__with_NOVOX_canopy_EA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pressure_Level__LpA__with_NOVOX_canopy_EA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pressure_Level__LpA__with_NOVOX_canopy_EW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pressure_Level__LpA__with_NOVOX_canopy_EW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uncertainty_Kpa___Kwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uncertainty_Kpa___Kwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight_without_canopy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight_without_canopy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight_with_NOVOX_canopy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight_with_NOVOX_canopy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight_with_NOVOX_canopy_EA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight_with_NOVOX_canopy_EA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_arrangement_drawing_SW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_arrangement_drawing_SW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_arrangement_drawing_FW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_arrangement_drawing_FW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_arrangement_drawing_EA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_arrangement_drawing_EA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EW_SW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EW_SW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cable_gland__Power)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cable_gland__Power)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cable_gland__Alarm___Signal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cable_gland__Alarm___Signal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lisätietoja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lisätietoja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Suunnittelun_kommentit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suunnittelun_kommentit)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
