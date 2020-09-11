@@ -37,9 +37,7 @@
                             <th>Enigneering notes</th>
                             <th>Tuotto</th>
                             <th>DataSheet Status</th>
-                            <th>
-                                View
-                            </th>
+                            <th>View Details</th>
                         </tr>
                     </thead>
                     <tbody id="tblData">
@@ -73,10 +71,8 @@
                 { "data": "Datasheet_status", "name": "Datasheet_status", "autoWidth": true },
                 {
                     "render": function (data, type, full, meta) {
-                       
+                     
                         return "<a href='#' class='btn btn-info' onclick=ShowUserDetails('" + full.Datasivun_numero + "'); >View</a>";
-                        
-                         // return "<a href='#' class='btn btn-info'; >View</a>";
 
                     }
                 }
@@ -87,7 +83,6 @@
 
 <script type="text/javascript">
     function ShowUserDetails(ID) {
-        alert(ID);
         var url = '@Url.Content("~/")' + "Data/UserDetails";
         $.ajax({
             type: "POST",
@@ -96,6 +91,7 @@
             contentType: "application/json; charset=utf-8",
             dataType: "html",
             success: function (response)
+            
             {
                 $('#contentBody').html(response);
                 $('#myModal').modal('show');

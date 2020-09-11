@@ -416,6 +416,7 @@
     <Content Include="Views\NewDataSheet\Index.cshtml" />
     <Content Include="Views\ViewDashboard\Dashboard.cshtml" />
     <Content Include="Views\ViewDataSheet\Index.cshtml" />
+    <Content Include="Views\Shared\_UserDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
