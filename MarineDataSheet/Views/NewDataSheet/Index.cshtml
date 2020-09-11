@@ -4,10 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
 }
-<link href="~/Scripts/dataTablesScripts/dataTables.bootstrap.min.css" rel="stylesheet" />
-<link href="~/Scripts/dataTablesScripts/responsive.bootstrap.min.css" rel="stylesheet" />
-<script src="~/Scripts/dataTablesScripts/jquery.dataTables.min.js"></script>
-<script src="~/Scripts/dataTablesScripts/dataTables.bootstrap4.min.js"></script>
+
 
 <h4 class="page-header">Create  New DataSheet</h4>
 
@@ -18,15 +15,15 @@
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="row">
+            @*<div class="row">
                 @Html.LabelFor(model => model.Laskuri, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-lg-4">
                     @Html.EditorFor(model => model.Laskuri, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Laskuri, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
 
-            <div class="row">
+            @*<div class="row">
                 @Html.LabelFor(model => model.STD, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-lg-4">
                     <div class="checkbox">
@@ -34,7 +31,7 @@
                         @Html.ValidationMessageFor(model => model.STD, "", new { @class = "text-danger" })
                     </div>
                 </div>
-            </div>
+            </div>*@
 
             <div class="row">
                 @Html.LabelFor(model => model.Datasivun_numero, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -44,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            @*<div class="row">
                 @Html.LabelFor(model => model.Datasheet_revision, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-lg-4">
                     @Html.EditorFor(model => model.Datasheet_revision, new { htmlAttributes = new { @class = "form-control" } })
@@ -145,12 +142,12 @@
                     @Html.EditorFor(model => model.C2_Starting_type, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.C2_Starting_type, "", new { @class = "text-danger" })
                 </div>
-            </div>
+            </div>*@
 
             <div class="row">
                 <div class="col-lg-4">
                     <input type="submit" value="Create DataSheet" class="btn btn-success" />
-                    @Html.ActionLink("Clear", "Index", "NewDataSheet", null, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Clear", "AddNewDataSheet", "NewDataSheet", null, new { @class = "btn btn-danger" })
 
                     @Html.ActionLink("ViewData Sheet", "Index", "Data", null, new { @class = "btn btn-info" })
 

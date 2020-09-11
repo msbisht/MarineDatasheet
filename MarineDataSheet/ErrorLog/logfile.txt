@@ -1,0 +1,8 @@
+2020-09-11 15:53:27,514 [14] INFO  MarineDataSheet.Controllers.NewDataSheetController [(null)] -    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at MarineDataSheet.Controllers.NewDataSheetController.Index(Datum model) in D:\MarineDataSheet\MarineDataSheet\Controllers\NewDataSheetController.cs:line 31
+2020-09-11 15:56:35,097 [14] INFO  MarineDataSheet.Controllers.NewDataSheetController [(null)] -    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at MarineDataSheet.Controllers.NewDataSheetController.Index(Datum model) in D:\MarineDataSheet\MarineDataSheet\Controllers\NewDataSheetController.cs:line 31

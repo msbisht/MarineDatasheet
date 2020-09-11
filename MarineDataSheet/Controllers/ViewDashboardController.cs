@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,12 @@ namespace MarineDataSheet.Controllers
 {
     public class ViewDashboardController : Controller
     {
+        private static log4net.ILog Log { get; set; }
+        ILog log = log4net.LogManager.GetLogger(typeof(ViewDashboardController));
         // GET: ViewDashboard
         public ActionResult Dashboard()
         {
+            log.Info("Before Paramater called");
             //try
             //{
             return View();
