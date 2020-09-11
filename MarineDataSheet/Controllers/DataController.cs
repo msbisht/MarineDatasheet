@@ -56,5 +56,15 @@ namespace MarineDataSheet.Controllers
                 return Json(new { draw = draw, recordsFiltered = totalRecords, recordsTotal = totalRecords, data = data }, JsonRequestBehavior.AllowGet);
             }
         }
+        public ActionResult UserDetails(string RegistrationID)
+        {
+            MarinedataEntities dc = new MarinedataEntities();
+            if (RegistrationID == null)
+            {
+
+            }
+            var userDetailsResponse = dc.Data.Where(x => x.Datasivun_numero == RegistrationID);
+            return View(userDetailsResponse);
+        }
     }
 }

@@ -62,24 +62,68 @@
                 "datatype": "json"
             },
             "columns": [
-                        { "data": "Datasivun_numero", "name": "Datasivun_numero", "autoWidth": true },
-                        { "data": "Datasheet_revision", "name": "Datasheet_revision", "autoWidth": true },
-                        { "data": "Code", "name": "Code", "autoWidth": true },
-                        { "data": "Model", "name": "Model", "autoWidth": true },
-                        { "data": "Maximum_working_pressure__barg_", "name": "Maximum_working_pressure__barg_", "autoWidth": true },
+                { "data": "Datasivun_numero", "name": "Datasivun_numero", "autoWidth": true },
+                { "data": "Datasheet_revision", "name": "Datasheet_revision", "autoWidth": true },
+                { "data": "Code", "name": "Code", "autoWidth": true },
+                { "data": "Model", "name": "Model", "autoWidth": true },
+                { "data": "Maximum_working_pressure__barg_", "name": "Maximum_working_pressure__barg_", "autoWidth": true },
                 { "data": "Lisätietoja", "name": "Lisätietoja", "autoWidth": true },
                 { "data": "Suunnittelun_kommentit", "name": "Suunnittelun_kommentit", "autoWidth": true },
                 { "data": "Capacity_at_normal_working_pressure__m__min_", "name": "Capacity_at_normal_working_pressure__m__min_", "autoWidth": true },
                 { "data": "Datasheet_status", "name": "Datasheet_status", "autoWidth": true },
-               {
+                {
                     "render": function (data, type, full, meta) {
-
-                        return "<a href='#' class='btn btn-info'; >View</a>";
+                       
+                        return "<a href='#' class='btn btn-info' onclick=ShowUserDetails('" + full.Datasivun_numero + "'); >View</a>";
+                        
+                         // return "<a href='#' class='btn btn-info'; >View</a>";
 
                     }
                 }
-                ]
+            ]
         });
     });
 </script>
+
+<script type="text/javascript">
+    function ShowUserDetails(ID) {
+        alert(ID);
+        var url = '@Url.Content("~/")' + "Data/UserDetails";
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: '{Datasivun_numero: "' + ID + '" }',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (response)
+            {
+                $('#contentBody').html(response);
+                $('#myModal').modal('show');
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    }
+</script>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Data Sheet Details</h4>
+            </div>
+            <div class="modal-body" id="contentBody">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
