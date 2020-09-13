@@ -66,15 +66,15 @@ namespace MarineDataSheet.Controllers
             // get Start (paging start index) and length (page size for paging)
            
         }
-        public ActionResult UserDetails(string ID)
+        public ActionResult UserDetails(int ID)
         {
             MarinedataEntities dc = new MarinedataEntities();
             if (ID == null)
             {
 
             }
-            var userDetailsResponse = dc.Data.Where(x => x.Datasivun_numero == ID);
-            return PartialView("_ViewDatasheet", dc.Data.Where(x => x.Datasivun_numero == ID));
+            var userDetailsResponse = dc.Data.Where(x => x.Laskuri == ID);
+            return PartialView("_UserDetails", userDetailsResponse);
         }
     }
 }

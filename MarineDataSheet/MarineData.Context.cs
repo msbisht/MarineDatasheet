@@ -27,5 +27,7 @@ namespace MarineDataSheet
     
         public virtual DbSet<Datum> Data { get; set; }
         public virtual DbSet<Jälkijäähdytinteho_korjauskerroin> Jälkijäähdytinteho_korjauskerroin { get; set; }
+
+        public System.Data.Entity.DbSet<MarineDataSheet.Models.Datasheet> Datasheets { get; set; }
     }
 }

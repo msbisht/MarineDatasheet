@@ -28,6 +28,7 @@
                 <table id="myTable" class="table table-striped table-bordered dt-responsive " width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Datasheet Number</th>
                             <th>Revision</th>
                             <th>Code</th>
@@ -37,6 +38,7 @@
                             <th>Enigneering notes</th>
                             <th>Tuotto</th>
                             <th>DataSheet Status</th>
+
                             <th>View Details</th>
                         </tr>
                     </thead>
@@ -59,7 +61,20 @@
                 "type": "POST",
                 "datatype": "json"
             },
+            "columnDefs":
+            [{
+                "targets": [0],
+                "visible": false,
+                "searchable": false
+            },
+            {
+                "targets": [6],
+                "visible": true,
+                "searchable": false,
+                "orderable": false
+            }],
             "columns": [
+                 { "data": "Laskuri", "name": "Laskuri", "autoWidth": true },
                 { "data": "Datasivun_numero", "name": "Datasivun_numero", "autoWidth": true },
                 { "data": "Datasheet_revision", "name": "Datasheet_revision", "autoWidth": true },
                 { "data": "Code", "name": "Code", "autoWidth": true },
@@ -69,10 +84,13 @@
                 { "data": "Suunnittelun_kommentit", "name": "Suunnittelun_kommentit", "autoWidth": true },
                 { "data": "Capacity_at_normal_working_pressure__m__min_", "name": "Capacity_at_normal_working_pressure__m__min_", "autoWidth": true },
                 { "data": "Datasheet_status", "name": "Datasheet_status", "autoWidth": true },
+               
+               
+
                 {
                     "render": function (data, type, full, meta) {
                      
-                        return "<a href='#' class='btn btn-info' onclick=ShowUserDetails('" + full.Datasivun_numero + "'); >View</a>";
+                        return "<a href='#' class='btn btn-info' onclick=ShowUserDetails('" + full.Laskuri + "'); >View</a>";
 
                     }
                 }
@@ -83,7 +101,7 @@
 
 <script type="text/javascript">
     function ShowUserDetails(ID) {
-        var url = '@Url.Content("~/")' + "Data/UserDetails";
+        var url = '@Url.Content("~/")' + "Data/UserDetails/"+ ID;
         $.ajax({
             type: "POST",
             url: url,
@@ -91,8 +109,8 @@
             contentType: "application/json; charset=utf-8",
             dataType: "html",
             success: function (response)
-            
             {
+                
                 $('#contentBody').html(response);
                 $('#myModal').modal('show');
             },

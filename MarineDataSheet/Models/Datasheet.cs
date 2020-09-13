@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -9,6 +10,7 @@ namespace MarineDataSheet.Models
 
     public partial class Datasheet
     {
+        [Key]
         public int Laskuri { get; set; }
         public bool STD { get; set; }
         public string Datasivun_numero { get; set; }
