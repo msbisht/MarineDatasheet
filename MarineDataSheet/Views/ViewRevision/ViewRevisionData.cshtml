@@ -1,5 +1,4 @@
 ﻿
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
@@ -57,7 +56,7 @@
             "filter": true, // this is for disable filter (search box)
             "orderMulti": false, // for disable multiple column at once
             "ajax": {
-                "url": "/data/LoadData",
+                "url": "/ViewRevision/ViewRevisionData",
                 "type": "POST",
                 "datatype": "json"
             },
@@ -84,12 +83,12 @@
                 { "data": "Suunnittelun_kommentit", "name": "Suunnittelun_kommentit", "autoWidth": true },
                 { "data": "Capacity_at_normal_working_pressure__m__min_", "name": "Capacity_at_normal_working_pressure__m__min_", "autoWidth": true },
                 { "data": "Datasheet_status", "name": "Datasheet_status", "autoWidth": true },
-               
-               
+
+
 
                 {
                     "render": function (data, type, full, meta) {
-                     
+
                         return "<a href='#' class='btn btn-info' onclick=ShowUserDetails('" + full.Laskuri + "'); >View</a>";
 
                     }
@@ -110,7 +109,7 @@
             dataType: "html",
             success: function (response)
             {
-                
+
                 $('#contentBody').html(response);
                 $('#myModal').modal('show');
             },
@@ -140,4 +139,3 @@
         </div>
     </div>
 </div>
-

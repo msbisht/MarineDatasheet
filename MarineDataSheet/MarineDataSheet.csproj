@@ -141,6 +141,7 @@
     <Compile Include="Controllers\NewDataSheetController.cs" />
     <Compile Include="Controllers\ViewDashboardController.cs" />
     <Compile Include="Controllers\ViewDataSheetController.cs" />
+    <Compile Include="Controllers\ViewRevisionController.cs" />
     <Compile Include="Datum.cs">
       <DependentUpon>MarineData.tt</DependentUpon>
     </Compile>
@@ -422,6 +423,7 @@
     <Content Include="Views\ViewDashboard\Dashboard.cshtml" />
     <Content Include="Views\ViewDataSheet\Index.cshtml" />
     <Content Include="Views\Shared\_UserDetails.cshtml" />
+    <Content Include="Views\ViewRevision\ViewRevisionData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
