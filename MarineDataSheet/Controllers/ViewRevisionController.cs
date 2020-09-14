@@ -24,7 +24,7 @@ namespace MarineDataSheet.Controllers
             //Get parameters
             try
             {
-                Log.Info("Before Paramater called");
+                log.Info("Before Paramater called");
                 var draw = Request.Form.GetValues("draw").FirstOrDefault();
                 var start = Request.Form.GetValues("start").FirstOrDefault();
                 var length = Request.Form.GetValues("length").FirstOrDefault();

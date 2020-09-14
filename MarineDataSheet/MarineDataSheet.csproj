@@ -423,7 +423,7 @@
     <Content Include="Views\ViewDashboard\Dashboard.cshtml" />
     <Content Include="Views\ViewDataSheet\Index.cshtml" />
     <Content Include="Views\Shared\_UserDetails.cshtml" />
-    <Content Include="Views\ViewRevision\ViewRevisionData.cshtml" />
+    <Content Include="Views\ViewRevision\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
