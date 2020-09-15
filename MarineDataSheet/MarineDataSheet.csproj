@@ -204,8 +204,8 @@
     </EntityDeploy>
     <Content Include="MarineData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MarineData.Context.cs</LastGenOutput>
       <DependentUpon>MarineData.edmx</DependentUpon>
+      <LastGenOutput>MarineData.Context.cs</LastGenOutput>
     </Content>
     <Content Include="MarineData.edmx.diagram">
       <DependentUpon>MarineData.edmx</DependentUpon>

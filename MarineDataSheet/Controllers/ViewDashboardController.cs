@@ -16,9 +16,9 @@ namespace MarineDataSheet.Controllers
         public ActionResult Dashboard()
         {
            log.Info("Before Paramater called");
-           ViewBag.UsersCount = dbobje.Data.Where(x=>x.Datasheet_status== "Käytössä").Count();
-           ViewBag.ProjectCount = dbobje.Data.Where(x => x.Datasheet_status == "Ei käytössä").Count();
-           return View();
+            ViewBag.UsersCount = dbobje.Data.Where(x => x.Datasheet_status == "Käytössä").Count();
+            ViewBag.ProjectCount = dbobje.Data.Where(x => x.Datasheet_status == "Ei käytössä").Count();
+            return View();
         }
     }
 }

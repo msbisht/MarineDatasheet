@@ -5,16 +5,11 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="MarinedataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Marinedata.dbo.Data' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Data">
           <Key>
             <PropertyRef Name="Laskuri" />
-            <PropertyRef Name="STD" />
-            <PropertyRef Name="Valid from" />
-            <PropertyRef Name="Datasheet status" />
           </Key>
-          <Property Name="Laskuri" Type="int" Nullable="false" />
+          <Property Name="Laskuri" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="STD" Type="bit" Nullable="false" />
           <Property Name="Datasivun numero" Type="nvarchar" MaxLength="10" />
           <Property Name="Datasheet revision" Type="nvarchar" MaxLength="50" />
@@ -228,116 +223,7 @@ warning 6013: The table/view 'Marinedata.dbo.Paste Errors' does not have a prima
           <Property Name="F87" Type="nvarchar" MaxLength="255" />
         </EntityType>-->
         <EntityContainer Name="MarinedataModelStoreContainer">
-          <EntitySet Name="Data" EntityType="Self.Data" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Data].[Laskuri] AS [Laskuri], 
-    [Data].[STD] AS [STD], 
-    [Data].[Datasivun numero] AS [Datasivun numero], 
-    [Data].[Datasheet revision] AS [Datasheet revision], 
-    [Data].[Valid from] AS [Valid from], 
-    [Data].[Datasheet status] AS [Datasheet status], 
-    [Data].[Code] AS [Code], 
-    [Data].[Datasheet created by] AS [Datasheet created by], 
-    [Data].[Model] AS [Model], 
-    [Data].[Maximum working pressure (barg)] AS [Maximum working pressure (barg)], 
-    [Data].[Cooling] AS [Cooling], 
-    [Data].[1 Voltage] AS [1 Voltage], 
-    [Data].[1 Frequency] AS [1 Frequency], 
-    [Data].[1 Starting type] AS [1 Starting type], 
-    [Data].[2 Voltage] AS [2 Voltage], 
-    [Data].[2 Frequency] AS [2 Frequency], 
-    [Data].[2 Starting type] AS [2 Starting type], 
-    [Data].[Normal working pressure (barg)] AS [Normal working pressure (barg)], 
-    [Data].[Capacity at normal working pressure (m³/min)] AS [Capacity at normal working pressure (m³/min)], 
-    [Data].[Capacity at normal working pressure (m³/min)_75%] AS [Capacity at normal working pressure (m³/min)_75%], 
-    [Data].[Capacity at normal working pressure (m³/min)_50%] AS [Capacity at normal working pressure (m³/min)_50%], 
-    [Data].[Capacity at normal working pressure (m³/min)_25%] AS [Capacity at normal working pressure (m³/min)_25%], 
-    [Data].[Capacity at normal working pressure (m³/min)_min] AS [Capacity at normal working pressure (m³/min)_min], 
-    [Data].[Volumetric efficiency %] AS [Volumetric efficiency %], 
-    [Data].[Air end volume per revolution] AS [Air end volume per revolution], 
-    [Data].[Shaft power at normal working pressure (kW)] AS [Shaft power at normal working pressure (kW)], 
-    [Data].[Shaft power at normal working pressure (kW)_75%] AS [Shaft power at normal working pressure (kW)_75%], 
-    [Data].[Shaft power at normal working pressure (kW)_50%] AS [Shaft power at normal working pressure (kW)_50%], 
-    [Data].[Shaft power at normal working pressure (kW)_25%] AS [Shaft power at normal working pressure (kW)_25%], 
-    [Data].[Shaft power at normal working pressure (kW)_min] AS [Shaft power at normal working pressure (kW)_min], 
-    [Data].[Specific power consumption (kW/m3/min)] AS [Specific power consumption (kW/m3/min)], 
-    [Data].[Extra capacity %] AS [Extra capacity %], 
-    [Data].[Minimum working pressure (barg)] AS [Minimum working pressure (barg)], 
-    [Data].[Frequency min] AS [Frequency min], 
-    [Data].[Frequency max] AS [Frequency max], 
-    [Data].[Transmission:] AS [Transmission:], 
-    [Data].[Transmission: Gear, i=] AS [Transmission: Gear, i=], 
-    [Data].[Motor pulley:] AS [Motor pulley:], 
-    [Data].[Air end pulley:] AS [Air end pulley:], 
-    [Data].[Maximum ambient temperature (C°)] AS [Maximum ambient temperature (C°)], 
-    [Data].[Compressed air temperature above cooling medium temperature (C°)] AS [Compressed air temperature above cooling medium temperature (C°)], 
-    [Data].[Cooling air flow (m³/s)] AS [Cooling air flow (m³/s)], 
-    [Data].[Cooling air flow (m³/s)_water cooled] AS [Cooling air flow (m³/s)_water cooled], 
-    [Data].[Maximum cooling air pressure drop (Pa)] AS [Maximum cooling air pressure drop (Pa)], 
-    [Data].[Water in (C°), Fresh water cooled] AS [Water in (C°), Fresh water cooled], 
-    [Data].[Water out (C°), Fresh water cooled] AS [Water out (C°), Fresh water cooled], 
-    [Data].[Water in (C°), Sea water cooled] AS [Water in (C°), Sea water cooled], 
-    [Data].[Water out (C°), Sea water cooled] AS [Water out (C°), Sea water cooled], 
-    [Data].[Extra factor for water flow at 60% humidity_fresh] AS [Extra factor for water flow at 60% humidity_fresh], 
-    [Data].[Minimum water inlet pressure with zero back (bar)/(MPa) (Serial)] AS [Minimum water inlet pressure with zero back (bar)/(MPa) (Serial)], 
-    [Data].[Minimum water inlet pressure with zero ba (bar)/(MPa) (Parallel)] AS [Minimum water inlet pressure with zero ba (bar)/(MPa) (Parallel)], 
-    [Data].[Minimum water inlet pressure with zero back (Serial)_sea] AS [Minimum water inlet pressure with zero back (Serial)_sea], 
-    [Data].[Minimum water inlet pressure with zero back (Parallel)_sea] AS [Minimum water inlet pressure with zero back (Parallel)_sea], 
-    [Data].[Minimum water inlet pressure with zero back (bar)/(MPa)_Oil] AS [Minimum water inlet pressure with zero back (bar)/(MPa)_Oil], 
-    [Data].[Minimum water inlet pressure with zero back (bar)/(MPa)_After] AS [Minimum water inlet pressure with zero back (bar)/(MPa)_After], 
-    [Data].[Maximum inlet pressure (barg)] AS [Maximum inlet pressure (barg)], 
-    [Data].[Water in / out T2 / T3] AS [Water in / out T2 / T3], 
-    [Data].[Heat dissipation (kW) EA] AS [Heat dissipation (kW) EA], 
-    [Data].[Heat dissipation (kW) EW] AS [Heat dissipation (kW) EW], 
-    [Data].[Main motor : F-class, IP 55 (kW)] AS [Main motor : F-class, IP 55 (kW)], 
-    [Data].[Main motor max power] AS [Main motor max power], 
-    [Data].[Main motor protection details] AS [Main motor protection details], 
-    [Data].[Main motor temperature rise] AS [Main motor temperature rise], 
-    [Data].[Speed of rotation (rpm)] AS [Speed of rotation (rpm)], 
-    [Data].[Speed of rotation (rpm)_min] AS [Speed of rotation (rpm)_min], 
-    [Data].[Motor cos fii] AS [Motor cos fii], 
-    [Data].[Motor efficiency] AS [Motor efficiency], 
-    [Data].[Fan motor (kW) EA] AS [Fan motor (kW) EA], 
-    [Data].[Fan motor (kW) EW] AS [Fan motor (kW) EW], 
-    [Data].[Speed of rotation (rpm) - fan motor] AS [Speed of rotation (rpm) - fan motor], 
-    [Data].[Voltage tolerance] AS [Voltage tolerance], 
-    [Data].[Hydraulic main motor] AS [Hydraulic main motor], 
-    [Data].[Hydraulic motor speed of rotation (Max)] AS [Hydraulic motor speed of rotation (Max)], 
-    [Data].[Hydraulic motor speed of rotation (Min)] AS [Hydraulic motor speed of rotation (Min)], 
-    [Data].[Hydraulic oil flow (l/min)] AS [Hydraulic oil flow (l/min)], 
-    [Data].[Hydraulic oil flow (l/min)_min] AS [Hydraulic oil flow (l/min)_min], 
-    [Data].[Hydraulic oil pressure (bar)] AS [Hydraulic oil pressure (bar)], 
-    [Data].[Hydraulic oil pressure (bar)_min] AS [Hydraulic oil pressure (bar)_min], 
-    [Data].[Fuse (max) (1 Jännite) A] AS [Fuse (max) (1 Jännite) A], 
-    [Data].[Fuse (max) (2 Jännite) A] AS [Fuse (max) (2 Jännite) A], 
-    [Data].[Starting current Ia/In DOL / Y/D / SOFT-START] AS [Starting current Ia/In DOL / Y/D / SOFT-START], 
-    [Data].[Control voltage (V)] AS [Control voltage (V)], 
-    [Data].[Oil quantity (I)] AS [Oil quantity (I)], 
-    [Data].[Oil quantity EA (I)] AS [Oil quantity EA (I)], 
-    [Data].[Oil content (mg/m³)] AS [Oil content (mg/m³)], 
-    [Data].[Air outlet T1] AS [Air outlet T1], 
-    [Data].[Air outlet T1_water cooled] AS [Air outlet T1_water cooled], 
-    [Data].[Condensate drain T4] AS [Condensate drain T4], 
-    [Data].[Pressure Level (LpA) without canopy EA] AS [Pressure Level (LpA) without canopy EA], 
-    [Data].[Pressure Level (LpA) without canopy EW] AS [Pressure Level (LpA) without canopy EW], 
-    [Data].[Pressure Level (LpA) with NOVOX canopy EA] AS [Pressure Level (LpA) with NOVOX canopy EA], 
-    [Data].[Pressure Level (LpA) with NOVOX canopy EW] AS [Pressure Level (LpA) with NOVOX canopy EW], 
-    [Data].[Uncertainty Kpa / Kwa] AS [Uncertainty Kpa / Kwa], 
-    [Data].[Weight without canopy] AS [Weight without canopy], 
-    [Data].[Weight with NOVOX canopy] AS [Weight with NOVOX canopy], 
-    [Data].[Weight with NOVOX canopy EA] AS [Weight with NOVOX canopy EA], 
-    [Data].[General arrangement drawing SW] AS [General arrangement drawing SW], 
-    [Data].[General arrangement drawing FW] AS [General arrangement drawing FW], 
-    [Data].[General arrangement drawing EA] AS [General arrangement drawing EA], 
-    [Data].[General arrangement drawing with NOVOX canopy EA] AS [General arrangement drawing with NOVOX canopy EA], 
-    [Data].[General arrangement drawing with NOVOX canopy EW] AS [General arrangement drawing with NOVOX canopy EW], 
-    [Data].[General arrangement drawing with NOVOX canopy EW SW] AS [General arrangement drawing with NOVOX canopy EW SW], 
-    [Data].[Cable gland: Power] AS [Cable gland: Power], 
-    [Data].[Cable gland: Alarm / Signal] AS [Cable gland: Alarm / Signal], 
-    [Data].[Lisätietoja] AS [Lisätietoja], 
-    [Data].[Suunnittelun kommentit] AS [Suunnittelun kommentit]
-    FROM [dbo].[Data] AS [Data]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jälkijäähdytinteho korjauskerroin" EntityType="Self.Jälkijäähdytinteho korjauskerroin" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Jälkijäähdytinteho korjauskerroin].[Tunniste] AS [Tunniste], 
@@ -354,11 +240,8 @@ warning 6013: The table/view 'Marinedata.dbo.Paste Errors' does not have a prima
         <EntityType Name="Datum">
           <Key>
             <PropertyRef Name="Laskuri" />
-            <PropertyRef Name="STD" />
-            <PropertyRef Name="Valid_from" />
-            <PropertyRef Name="Datasheet_status" />
           </Key>
-          <Property Name="Laskuri" Type="Int32" Nullable="false" />
+          <Property Name="Laskuri" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="STD" Type="Boolean" Nullable="false" />
           <Property Name="Datasivun_numero" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Datasheet_revision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
