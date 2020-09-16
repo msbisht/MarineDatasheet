@@ -38,7 +38,6 @@
                             <th>Enigneering notes</th>
                             <th>Tuotto</th>
                             <th>DataSheet Status</th>
-
                             <th>View Details</th>
                         </tr>
                     </thead>
@@ -74,7 +73,7 @@
                 "orderable": false
             }],
             "columns": [
-                 { "data": "Laskuri", "name": "Laskuri", "autoWidth": true },
+                { "data": "Laskuri", "name": "Laskuri", "autoWidth": true },
                 { "data": "Datasivun_numero", "name": "Datasivun_numero", "autoWidth": true },
                 { "data": "Datasheet_revision", "name": "Datasheet_revision", "autoWidth": true },
                 { "data": "Code", "name": "Code", "autoWidth": true },
@@ -84,9 +83,6 @@
                 { "data": "Suunnittelun_kommentit", "name": "Suunnittelun_kommentit", "autoWidth": true },
                 { "data": "Capacity_at_normal_working_pressure__m__min_", "name": "Capacity_at_normal_working_pressure__m__min_", "autoWidth": true },
                 { "data": "Datasheet_status", "name": "Datasheet_status", "autoWidth": true },
-               
-               
-
                 {
                     "render": function (data, type, full, meta) {
                      
@@ -105,7 +101,7 @@
         $.ajax({
             type: "POST",
             url: url,
-            data: '{Datasivun_numero: "' + ID + '" }',
+            data: '{Laskuri: "' + ID + '" }',
             contentType: "application/json; charset=utf-8",
             dataType: "html",
             success: function (response)

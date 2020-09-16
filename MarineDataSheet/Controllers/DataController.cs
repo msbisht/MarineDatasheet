@@ -77,7 +77,7 @@ namespace MarineDataSheet.Controllers
             return PartialView("_UserDetails", userDetailsResponse);
         }
 
-        
+
         [HttpPost]
         public ActionResult ViewRevisionData()
         {

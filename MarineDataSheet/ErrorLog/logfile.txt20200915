@@ -1,0 +1,31 @@
+2020-09-15 10:26:04,959 [11] INFO  MarineDataSheet.Controllers.ViewDashboardController [(null)] - Before Paramater called
+2020-09-15 10:26:10,587 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - Index METHOD WAS CALLED
+2020-09-15 10:26:11,882 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 10:26:11,883 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 10:26:48,491 [11] INFO  MarineDataSheet.Controllers.ViewDashboardController [(null)] - Before Paramater called
+2020-09-15 10:26:51,672 [20] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 10:26:51,673 [20] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 10:26:56,939 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 10:26:56,940 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 10:26:58,895 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 10:26:58,895 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 10:27:00,178 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 10:27:00,179 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 10:27:01,267 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 10:27:01,267 [11] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 10:27:03,935 [20] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 10:27:03,936 [20] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 10:27:08,313 [11] INFO  MarineDataSheet.Controllers.ViewDashboardController [(null)] - Before Paramater called
+2020-09-15 10:56:58,803 [12] INFO  MarineDataSheet.Controllers.ViewDashboardController [(null)] - Before Paramater called
+2020-09-15 10:57:09,871 [12] INFO  MarineDataSheet.Controllers.DataController [(null)] - Index METHOD WAS CALLED
+2020-09-15 10:57:11,153 [14] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 10:57:11,153 [14] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 10:57:19,523 [12] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 10:57:19,523 [12] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 10:57:22,737 [12] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 10:57:22,738 [12] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 21:52:26,508 [7] INFO  MarineDataSheet.Controllers.ViewDashboardController [(null)] - Before Paramater called
+2020-09-15 21:52:40,594 [7] INFO  MarineDataSheet.Controllers.DataController [(null)] - Index METHOD WAS CALLED
+2020-09-15 21:52:42,387 [9] INFO  MarineDataSheet.Controllers.DataController [(null)] - Before Paramater called
+2020-09-15 21:52:42,388 [9] INFO  MarineDataSheet.Controllers.DataController [(null)] - ActionMethod was Called Before Database
+2020-09-15 22:01:21,572 [13] INFO  MarineDataSheet.Controllers.ViewDashboardController [(null)] - Before Paramater called

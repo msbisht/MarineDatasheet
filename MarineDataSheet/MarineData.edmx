@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MarinedataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MarinedataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Data">
           <Key>
             <PropertyRef Name="Laskuri" />
@@ -117,12 +117,12 @@
           <Property Name="Suunnittelun kommentit" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'Marinedata.dbo.Datasivun tila' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+warning 6013: The table/view 'MarineData.dbo.Datasivun tila' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="Datasivun tila">
           <Property Name="Dataisvun tila" Type="nvarchar" MaxLength="50" />
         </EntityType>-->
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Marinedata.dbo.Jälkijäähdytinteho korjauskerroin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'MarineData.dbo.Jälkijäähdytinteho korjauskerroin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Jälkijäähdytinteho korjauskerroin">
           <Key>
             <PropertyRef Name="Tunniste" />
@@ -132,7 +132,7 @@ warning 6002: The table/view 'Marinedata.dbo.Jälkijäähdytinteho korjauskerroi
           <Property Name="Korjauskerroin" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'Marinedata.dbo.Paste Errors' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="Paste Errors">
           <Property Name="F1" Type="nvarchar" MaxLength="255" />
           <Property Name="F2" Type="nvarchar" MaxLength="255" />
@@ -232,8 +232,7 @@ warning 6013: The table/view 'Marinedata.dbo.Paste Errors' does not have a prima
     FROM [dbo].[Jälkijäähdytinteho korjauskerroin] AS [Jälkijäähdytinteho korjauskerroin]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MarinedataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
