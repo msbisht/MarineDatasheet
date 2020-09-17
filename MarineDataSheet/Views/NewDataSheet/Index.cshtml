@@ -12,8 +12,6 @@
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-
             <table>
                 <tr>
                     <td>&nbsp;</td>
@@ -22,38 +20,34 @@
                 </tr>
                 <tr>
                     <td>
-                        <strong>
-                            DataSheet number:
-                            @Html.EditorFor(model => model.Datasivun_numero, new { @class = "", @onkeypress = "return false;" })
-                            @Html.ValidationMessageFor(model => model.Datasivun_numero, "", new { @class = "text-danger" })
-                        </strong>
+                        @Html.Label("DataSheet number:", htmlAttributes: new { @class = "control-label manadatory" })
+                        @Html.TextBoxFor(model => model.Datasivun_numero, new { @class = "myclass", @onkeypress = "return false;" })
+                        @Html.ValidationMessageFor(model => model.Datasivun_numero, "", new { @class = "text-danger" })
                     </td>
                     <td>
-                        <strong>
-                            &nbsp; Standard datasheet: &nbsp;
-                            @Html.CheckBoxFor(model => model.STD, htmlAttributes: new { @checked = true })
-                        </strong>
+                        &nbsp; &nbsp;
+                        @Html.Label("Standard datasheet:", htmlAttributes: new { @class = "" })
+                        &nbsp; &nbsp;
+                        @Html.CheckBoxFor(model => model.STD, htmlAttributes: new { @checked = true })
                     <td>
-                        <strong>
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Datasheet revision :
-                            @Html.EditorFor(model => model.Datasheet_revision, new { htmlAttributes = new { @class = "" } })
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;@Html.Label("Datasheet revision :", htmlAttributes: new { @class = "" })
+                            @Html.TextBoxFor(model => model.Datasheet_revision, new { @class = "myclass", @onkeypress = "return false;" })
                             &nbsp;
-                        </strong>
                     </td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td>
                         &nbsp;
-                    <td>&nbsp;</td>
+
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td>
                         <strong>
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Revision valid from:
-                            @Html.TextBoxFor(model => model.Valid_from, new { @class = "", @onkeypress = "return false;" })
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;@Html.Label("Revision valid from:", htmlAttributes: new { @class = "" })
+                            @Html.TextBoxFor(model => model.Valid_from, new { @class = "myclass", @onkeypress = "return false;" })
                             @Html.ValidationMessageFor(model => model.Valid_from, "", new { @class = "text-danger" })
                             &nbsp;
                         </strong>
@@ -71,7 +65,7 @@
                     <td></td>
                     <td>
                         <strong>
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Datasheet status:
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;@Html.Label("Datasheet status:", htmlAttributes: new { @class = "" }) 
                             @{
                                 List<SelectListItem> listItems = new List<SelectListItem>();
                                 listItems.Add(new SelectListItem
@@ -89,7 +83,7 @@
                             }
                             &nbsp;
                             &nbsp;
-                            @Html.DropDownListFor(model => model.Datasheet_status, listItems, "-- Select Status --")
+                            @Html.DropDownListFor(model => model.Datasheet_status, listItems, "-- Select Status --", new { @class = "myclass", @onkeypress = "return false;" })
                         </strong>
                     </td>
                 </tr>
@@ -103,8 +97,8 @@
                     <td></td>
                     <td>
                         <strong>
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Datasheet create by:
-                            @Html.EditorFor(model => model.Datasivun_numero, new { @class = "", @onkeypress = "return false;" })
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;@Html.Label("Datasheet create by:", htmlAttributes: new { @class = "" })
+                            @Html.TextBoxFor(model => model.Datasivun_numero, new { @class = "myclass", @onkeypress = "return false;" })
                         </strong>
                     </td>
                 </tr>
@@ -120,8 +114,8 @@
                     <tr>
                         <td>
                             <strong>
-                                Datasheet Extra note:&nbsp;&nbsp;&nbsp;&nbsp;
-                                @Html.EditorFor(model => model.Lisätietoja, new { @class = "", @onkeypress = "return false;" })
+                                @Html.Label("Datasheet Extra note:", htmlAttributes: new { @class = "" }) &nbsp;&nbsp;&nbsp;&nbsp;
+                                @Html.TextBoxFor(model => model.Lisätietoja, new { @class = "myclass", @onkeypress = "return false;" })
                             </strong>
                         </td>
                     </tr>
@@ -131,8 +125,8 @@
                     <tr>
                         <td>
                             <strong>
-                                Engineering Extra note:
-                                @Html.EditorFor(model => model.Suunnittelun_kommentit, new { @class = "", @onkeypress = "return false;" })
+                                @Html.Label("Engineering Extra note:", htmlAttributes: new { @class = "" }) 
+                                @Html.TextBoxFor(model => model.Suunnittelun_kommentit, new { @class = "myclass", @onkeypress = "return false;" })
                             </strong>
                         </td>
                     </tr>
@@ -147,49 +141,49 @@
 
             <table>
                 <tr>
-                    <td>Code:&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>1. Voltage:</td>
-                    <td> @Html.EditorFor(model => model.C1_Voltage, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Code:", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("1. Voltage:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Voltage, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
                 <tr>
-                    <td>Model:</td>
-                    <td> @Html.EditorFor(model => model.Model_No, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>1. Frequency:</td>
-                    <td> @Html.EditorFor(model => model.C1_Frequency, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Model:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Model_No, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("1. Frequency:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Frequency, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Maximum pressure (barg):</td>
-                    <td> @Html.EditorFor(model => model.Maximum_working_pressure_barg)</td>
-                    <td>1. Starting type:</td>
-                    <td> @Html.EditorFor(model => model.C1_Starting_type, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Maximum pressure (barg):", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Maximum_working_pressure_barg, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("1. Starting type:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Starting_type, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Normal working pressure (barg):</td>
-                    <td> @Html.EditorFor(model => model.Normal_working_pressure_barg, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>2. Voltage:</td>
-                    <td> @Html.EditorFor(model => model.C1_Voltage, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Normal working pressure (barg):", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Normal_working_pressure_barg, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("2. Voltage:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Voltage, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Minimum working pressure (barg):</td>
-                    <td> @Html.EditorFor(model => model.Minimum_working_pressure_barg, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>2. Frequency:</td>
-                    <td> @Html.EditorFor(model => model.C2_Frequency, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Minimum working pressure (barg):", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Minimum_working_pressure_barg, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("2. Frequency:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C2_Frequency, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Cooling:</td>
-                    <td> @Html.EditorFor(model => model.Cooling, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>2. Starting type:</td>
-                    <td> @Html.EditorFor(model => model.C2_Starting_type, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Cooling:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Cooling, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("2. Starting type:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C2_Starting_type, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Maximum ambient temperature (C°):</td>
-                    <td> @Html.EditorFor(model => model.Maximum_ambient_temperature_C, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Maximum ambient temperature (C°):", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Maximum_ambient_temperature_C, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -204,62 +198,61 @@
 
             <table>
                 <tr>
-                    <td>Main motor : F-class, IP 55 (kW):&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Voltage tolerance:</td>
-                    <td> @Html.EditorFor(model => model.C1_Voltage, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Main motor : F-class, IP 55 (kW):", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Voltage tolerance:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Voltage, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
                 <tr>
-                    <td>Main motor protection details:</td>
-                    <td> @Html.EditorFor(model => model.Model_No, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Fuse (max) (1 Jännite) A:</td>
-                    <td> @Html.EditorFor(model => model.C1_Frequency, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Main motor protection details:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Model_No, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Fuse (max) (1 Jännite) A:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Frequency, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Main motor temperature rise:</td>
-                    <td> @Html.EditorFor(model => model.Maximum_working_pressure_barg)</td>
-                    <td>Control voltage (V):</td>
-                    <td> @Html.EditorFor(model => model.C1_Starting_type, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Main motor temperature rise:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Maximum_working_pressure_barg, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Control voltage (V):", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Starting_type, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Speed of rotation (rpm) - main motor:</td>
-                    <td> @Html.EditorFor(model => model.Normal_working_pressure_barg, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Transmission: (B = Belt, G = Gear, D = Direct):</td>
-                    <td> @Html.EditorFor(model => model.C1_Voltage, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Speed of rotation (rpm) - main motor:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Normal_working_pressure_barg, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Transmission: (B = Belt, G = Gear, D = Direct):", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Voltage, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Motor cos fii:</td>
-                    <td> @Html.EditorFor(model => model.Minimum_working_pressure_barg, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Motor pulley:</td>
-                    <td> @Html.EditorFor(model => model.C2_Frequency, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Motor cos fii:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Minimum_working_pressure_barg, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Motor pulley:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C2_Frequency, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Motor efficiency %:</td>
-                    <td> @Html.EditorFor(model => model.Cooling, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Air end pulley:</td>
-                    <td> @Html.EditorFor(model => model.C2_Starting_type, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Motor efficiency %:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Cooling, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Air end pulley:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C2_Starting_type, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Fan motor (kW) EA / EW:</td>
-                    <td> @Html.EditorFor(model => model.Maximum_ambient_temperature_C, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Air end pulley:</td>
-                    <td>@Html.EditorFor(model => model.Maximum_ambient_temperature_C, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Fan motor (kW) EA / EW:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Maximum_ambient_temperature_C, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Air end pulley:", htmlAttributes: new { @class = "" })</td>
+                    <td>@Html.TextBoxFor(model => model.Maximum_ambient_temperature_C, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Speed of rotation (rpm) - fan motor:</td>
-                    <td> @Html.EditorFor(model => model.Maximum_ambient_temperature_C, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Speed of rotation (rpm) - fan motor:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Maximum_ambient_temperature_C, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
-
             <hr />
             <div>
                 <strong>
@@ -269,16 +262,16 @@
 
             <table>
                 <tr>
-                    <td>Capacity at normal working pressure (m³/min) min / max:&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" }) / @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Capacity at normal working pressure (m³/min) min / max:", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" }) / @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
                 <tr>
-                    <td>Shaft power at normal working pressure (kW) min / max:&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" }) / @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Shaft power at normal working pressure (kW) min / max:", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" }) / @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
                 <tr>
-                    <td>Frequency min / max:&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" }) / @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Frequency min / max:", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" }) / @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
             </table>
             <hr />
@@ -289,120 +282,112 @@
             </div>
             <table>
                 <tr>
-                    <td>Compressed air temp. above cooling medium temp. (C°):&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>  @Html.Label("Compressed air temp above cooling medium temp C°", new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
 
             </table>
 
             <div>
-                <strong>
+                
                     @Html.Label("Air cooled:", new { @class = "lbl-danger" })
-                </strong>
             </div>
             <table>
                 <tr>
-                    <td>Cooling air flow (m³/s) EA :&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Maximum cooling air pressure drop (Pa):&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Cooling air flow (m³/s) EA :", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Maximum cooling air pressure drop (Pa):", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
 
             </table>
 
             <div>
-                <strong>
                     @Html.Label("Water cooled:", new { @class = "lbl-danger" })
-                </strong>
+                
             </div>
 
             <table>
                 <tr>
-                    <td>Cooling air flow (m³/s) EW :&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Maximum water inlet pressure (barg):&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Cooling air flow (m³/s) EW :", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Maximum water inlet pressure (barg):", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
                 <tr>
-                    <td>Minimum water inlet pressure with zero back pressure (bar)(Serial) - FW:&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Water in / out T2 / T3:&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Minimum water inlet pressure with zero back pressure (bar)(Serial) - FW:", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Water in / out T2 / T3:", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
                 <tr>
-                    <td>Minimum water inlet pressure with zero back pressure (bar)(Serial) - SW:&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Water in / water out (C°), Fresh water cooled:&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Minimum water inlet pressure with zero back pressure (bar)(Serial) - SW:", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Water in / water out (C°), Fresh water cooled:", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
                 <tr>
-                    <td>Extra factor for water flow at 60 % humidity:&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Water in / water out (C°), Sea water cooled:&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Extra factor for water flow at 60 % humidity:", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Water in / water out (C°), Sea water cooled:", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
             </table>
             <hr />
             <div>
-                <strong>
                     @Html.Label("GENERAL TECHNICAL DATA:", new { @class = "lbl-danger" })
-                </strong>
             </div>
 
             <table>
                 <tr>
-                    <td>Oil quantity (I):&nbsp;</td>
-                    <td> @Html.EditorFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Weight with canopy:</td>
-                    <td> @Html.EditorFor(model => model.C1_Voltage, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Oil quantity (I):", htmlAttributes: new { @class = "" })&nbsp;</td>
+                    <td> @Html.TextBoxFor(model => model.Code, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Weight with canopy:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Voltage, new { @class = "myclass", @onkeypress = "return false;" })</td>
                 </tr>
                 <tr>
-                    <td>Oil content (mg/m³):</td>
-                    <td> @Html.EditorFor(model => model.Model_No, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>General arrangement drawing with canopy EA:</td>
-                    <td> @Html.EditorFor(model => model.C1_Frequency, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Oil content (mg/m³):", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Model_No, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("General arrangement drawing with canopy EA:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Frequency, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Air outlet T1 - Air cooled:</td>
-                    <td> @Html.EditorFor(model => model.Maximum_working_pressure_barg)</td>
-                    <td>General arrangement drawing with canopy EW:</td>
-                    <td> @Html.EditorFor(model => model.C1_Starting_type, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Air outlet T1 - Air cooled:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Maximum_working_pressure_barg, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("General arrangement drawing with canopy EW:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Starting_type, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Air outlet T1 - Water cooled:</td>
-                    <td> @Html.EditorFor(model => model.Normal_working_pressure_barg, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Cable gland: Power:</td>
-                    <td> @Html.EditorFor(model => model.C1_Voltage, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Air outlet T1 - Water cooled:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Normal_working_pressure_barg, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Cable gland: Power:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C1_Voltage, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Condensate drain T4:</td>
-                    <td> @Html.EditorFor(model => model.Minimum_working_pressure_barg, new { @class = "", @onkeypress = "return false;" })</td>
-                    <td>Cable gland: Alarm / Signal:</td>
-                    <td> @Html.EditorFor(model => model.C2_Frequency, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Condensate drain T4:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Minimum_working_pressure_barg, new { @class = "myclass", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Cable gland: Alarm / Signal:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.C2_Frequency, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Noise level (LpA) / power level (LWA) with canopy EA:</td>
-                    <td> @Html.EditorFor(model => model.Cooling, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Noise level (LpA) / power level (LWA) with canopy EA:", htmlAttributes: new { @class = "" })</td>
+                    <td> @Html.TextBoxFor(model => model.Cooling, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>Noise level (LpA) / power level (LWA) with canopy EW:</td>
-                    <td>@Html.EditorFor(model => model.Maximum_ambient_temperature_C, new { @class = "", @onkeypress = "return false;" })</td>
+                    <td>@Html.Label("Noise level (LpA) / power level (LWA) with canopy EW:", htmlAttributes: new { @class = "" })</td>
+                    <td>@Html.TextBoxFor(model => model.Maximum_ambient_temperature_C, new { @class = "myclass", @onkeypress = "return false;" })</td>
                     <td>
                         &nbsp;
                         &nbsp;
-
                         &nbsp;
                     </td>
                 </tr>
             </table>
-           
-                            
-
             <div class="row">
                 <div class="col-lg-4">
                     <input type="submit" value="Create DataSheet" class="btn btn-success" />
