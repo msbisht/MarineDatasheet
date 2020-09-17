@@ -17,7 +17,8 @@ namespace MarineDataSheet.Controllers
         ILog log = log4net.LogManager.GetLogger(typeof(DataController));
         public ActionResult Index()
         {
-            log.Info("Index METHOD WAS CALLED");
+            log.Info("---Action method in Data Controller was called--");
+            
             return View();
         }
 
@@ -39,7 +40,7 @@ namespace MarineDataSheet.Controllers
                 int skip = start != null ? Convert.ToInt32(start) : 0;
                 int totalRecords = 0;
                 log.Info("ActionMethod was Called Before Database");
-                using (MarinedataEntities dc = new MarinedataEntities())
+                using (MarineDataEntities dc = new MarineDataEntities())
                 {
                     var dv = (from a in dc.Data where (a.Datasheet_status== "Käytössä") select a );
                     //Sorting
@@ -68,7 +69,7 @@ namespace MarineDataSheet.Controllers
         }
         public ActionResult UserDetails(int ID)
         {
-            MarinedataEntities dc = new MarinedataEntities();
+            MarineDataEntities dc = new MarineDataEntities();
             if (ID == null)
             {
 
@@ -96,7 +97,7 @@ namespace MarineDataSheet.Controllers
                 int skip = start != null ? Convert.ToInt32(start) : 0;
                 int totalRecords = 0;
                 log.Info("ActionMethod was Called Before Database");
-                using (MarinedataEntities dc = new MarinedataEntities())
+                using (MarineDataEntities dc = new MarineDataEntities())
                 {
                     var dv = (from a in dc.Data where (a.Datasheet_status == "Ei käytössä") select a);
                     //Sorting

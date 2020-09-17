@@ -1,921 +1,250 @@
 ﻿@model MarineDataSheet.Datum
-   
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
 }
 
-
-<h4 class="page-header">Create  New DataSheet</h4>
-
-<div class="panel panel-default">
-    <div class="panel-heading">Create DataSheet</div>
-    <div class="panel-body">
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-        <table>
-            <tr>
-                <td><strong>DataSheet number:</strong></td>
-                <td>
-                    @Html.EditorFor(model => model.Datasivun_numero, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Datasivun_numero, "", new { @class = "text-danger" })
-                </td>
-                <td></td>
-            </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-        </table>
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            @*<div class="row">
-                @Html.LabelFor(model => model.Datasivun_numero, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Datasivun_numero, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Datasivun_numero, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="row">
-                @Html.LabelFor(model => model.STD, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.STD)
-                        @Html.ValidationMessageFor(model => model.STD, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                @Html.LabelFor(model => model.Datasheet_revision, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Datasheet_revision, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Datasheet_revision, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Valid_from, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Valid_from, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Valid_from, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Datasheet_status, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Datasheet_status, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Datasheet_status, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Datasheet_created_by, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Datasheet_created_by, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Datasheet_created_by, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Model, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="row">
-                @Html.LabelFor(model => model.Cooling, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Cooling, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Cooling, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.C1_Voltage, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.C1_Voltage, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.C1_Voltage, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.C1_Frequency, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.C1_Frequency, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.C1_Frequency, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.C1_Starting_type, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.C1_Starting_type, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.C1_Starting_type, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.C2_Voltage, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.C2_Voltage, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.C2_Voltage, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.C2_Frequency, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.C2_Frequency, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.C2_Frequency, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.C2_Starting_type, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.C2_Starting_type, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.C2_Starting_type, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            @*<div class="row">
-                @Html.LabelFor(model => model.Normal_working_pressure__barg_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Normal_working_pressure__barg_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Normal_working_pressure__barg_, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-            @*<div class="row">
-                @Html.LabelFor(model => model.Capacity_at_normal_working_pressure__m__min_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Capacity_at_normal_working_pressure__m__min_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Capacity_at_normal_working_pressure__m__min_, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-            @*<div class="row">
-                @Html.LabelFor(model => model.Capacity_at_normal_working_pressure__m__min__75_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Capacity_at_normal_working_pressure__m__min__75_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Capacity_at_normal_working_pressure__m__min__75_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Capacity_at_normal_working_pressure__m__min__50_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Capacity_at_normal_working_pressure__m__min__50_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Capacity_at_normal_working_pressure__m__min__50_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Capacity_at_normal_working_pressure__m__min__25_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Capacity_at_normal_working_pressure__m__min__25_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Capacity_at_normal_working_pressure__m__min__25_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Capacity_at_normal_working_pressure__m__min__min, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Capacity_at_normal_working_pressure__m__min__min, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Capacity_at_normal_working_pressure__m__min__min, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-            @*<div class="row">
-                @Html.LabelFor(model => model.Volumetric_efficiency__, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Volumetric_efficiency__, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Volumetric_efficiency__, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-            <div class="row">
-                @Html.LabelFor(model => model.Air_end_volume_per_revolution, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Air_end_volume_per_revolution, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Air_end_volume_per_revolution, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            @*<div class="row">
-                @Html.LabelFor(model => model.Shaft_power_at_normal_working_pressure__kW_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Shaft_power_at_normal_working_pressure__kW_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Shaft_power_at_normal_working_pressure__kW_, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-            @*<div class="row">
-                @Html.LabelFor(model => model.Shaft_power_at_normal_working_pressure__kW__75_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Shaft_power_at_normal_working_pressure__kW__75_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Shaft_power_at_normal_working_pressure__kW__75_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Shaft_power_at_normal_working_pressure__kW__50_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Shaft_power_at_normal_working_pressure__kW__50_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Shaft_power_at_normal_working_pressure__kW__50_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Shaft_power_at_normal_working_pressure__kW__25_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Shaft_power_at_normal_working_pressure__kW__25_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Shaft_power_at_normal_working_pressure__kW__25_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Shaft_power_at_normal_working_pressure__kW__min, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Shaft_power_at_normal_working_pressure__kW__min, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Shaft_power_at_normal_working_pressure__kW__min, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-            @*<div class="row">
-                @Html.LabelFor(model => model.Specific_power_consumption__kW_m3_min_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Specific_power_consumption__kW_m3_min_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Specific_power_consumption__kW_m3_min_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Extra_capacity__, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Extra_capacity__, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Extra_capacity__, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Minimum_working_pressure__barg_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Minimum_working_pressure__barg_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Minimum_working_pressure__barg_, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-            <div class="row">
-                @Html.LabelFor(model => model.Frequency_min, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Frequency_min, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Frequency_min, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Frequency_max, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Frequency_max, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Frequency_max, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Transmission_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Transmission_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Transmission_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            @*<div class="row">
-                @Html.LabelFor(model => model.Transmission__Gear__i_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Transmission__Gear__i_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Transmission__Gear__i_, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-            @*<div class="row">
-                @Html.LabelFor(model => model.Motor_pulley_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Motor_pulley_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Motor_pulley_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Air_end_pulley_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Air_end_pulley_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Air_end_pulley_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Maximum_ambient_temperature__C__, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Maximum_ambient_temperature__C__, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Maximum_ambient_temperature__C__, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Compressed_air_temperature_above_cooling_medium_temperature__C__, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Compressed_air_temperature_above_cooling_medium_temperature__C__, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Compressed_air_temperature_above_cooling_medium_temperature__C__, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Cooling_air_flow__m__s_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Cooling_air_flow__m__s_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Cooling_air_flow__m__s_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Cooling_air_flow__m__s__water_cooled, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Cooling_air_flow__m__s__water_cooled, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Cooling_air_flow__m__s__water_cooled, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Maximum_cooling_air_pressure_drop__Pa_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Maximum_cooling_air_pressure_drop__Pa_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Maximum_cooling_air_pressure_drop__Pa_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Water_in__C____Fresh_water_cooled, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Water_in__C____Fresh_water_cooled, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Water_in__C____Fresh_water_cooled, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Water_out__C____Fresh_water_cooled, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Water_out__C____Fresh_water_cooled, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Water_out__C____Fresh_water_cooled, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Water_in__C____Sea_water_cooled, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Water_in__C____Sea_water_cooled, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Water_in__C____Sea_water_cooled, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Water_out__C____Sea_water_cooled, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Water_out__C____Sea_water_cooled, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Water_out__C____Sea_water_cooled, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Extra_factor_for_water_flow_at_60__humidity_fresh, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Extra_factor_for_water_flow_at_60__humidity_fresh, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Extra_factor_for_water_flow_at_60__humidity_fresh, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa___Serial_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa___Serial_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa___Serial_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Minimum_water_inlet_pressure_with_zero_ba__bar___MPa___Parallel_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Minimum_water_inlet_pressure_with_zero_ba__bar___MPa___Parallel_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Minimum_water_inlet_pressure_with_zero_ba__bar___MPa___Parallel_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Minimum_water_inlet_pressure_with_zero_back__Serial__sea, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Minimum_water_inlet_pressure_with_zero_back__Serial__sea, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Minimum_water_inlet_pressure_with_zero_back__Serial__sea, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Minimum_water_inlet_pressure_with_zero_back__Parallel__sea, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Minimum_water_inlet_pressure_with_zero_back__Parallel__sea, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Minimum_water_inlet_pressure_with_zero_back__Parallel__sea, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa__Oil, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa__Oil, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa__Oil, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa__After, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa__After, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Minimum_water_inlet_pressure_with_zero_back__bar___MPa__After, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Maximum_inlet_pressure__barg_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Maximum_inlet_pressure__barg_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Maximum_inlet_pressure__barg_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Water_in___out_T2___T3, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Water_in___out_T2___T3, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Water_in___out_T2___T3, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Heat_dissipation__kW__EA, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Heat_dissipation__kW__EA, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Heat_dissipation__kW__EA, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Heat_dissipation__kW__EW, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Heat_dissipation__kW__EW, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Heat_dissipation__kW__EW, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Main_motor___F_class__IP_55__kW_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Main_motor___F_class__IP_55__kW_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Main_motor___F_class__IP_55__kW_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Main_motor_max_power, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Main_motor_max_power, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Main_motor_max_power, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Main_motor_protection_details, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Main_motor_protection_details, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Main_motor_protection_details, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Main_motor_temperature_rise, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Main_motor_temperature_rise, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Main_motor_temperature_rise, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Speed_of_rotation__rpm_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Speed_of_rotation__rpm_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Speed_of_rotation__rpm_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Speed_of_rotation__rpm__min, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Speed_of_rotation__rpm__min, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Speed_of_rotation__rpm__min, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Motor_cos_fii, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Motor_cos_fii, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Motor_cos_fii, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Motor_efficiency, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Motor_efficiency, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Motor_efficiency, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Fan_motor__kW__EA, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Fan_motor__kW__EA, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Fan_motor__kW__EA, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Fan_motor__kW__EW, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Fan_motor__kW__EW, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Fan_motor__kW__EW, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Speed_of_rotation__rpm____fan_motor, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Speed_of_rotation__rpm____fan_motor, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Speed_of_rotation__rpm____fan_motor, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Voltage_tolerance, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Voltage_tolerance, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Voltage_tolerance, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Hydraulic_main_motor, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Hydraulic_main_motor, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Hydraulic_main_motor, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Hydraulic_motor_speed_of_rotation__Max_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Hydraulic_motor_speed_of_rotation__Max_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Hydraulic_motor_speed_of_rotation__Max_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Hydraulic_motor_speed_of_rotation__Min_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Hydraulic_motor_speed_of_rotation__Min_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Hydraulic_motor_speed_of_rotation__Min_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Hydraulic_oil_flow__l_min_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Hydraulic_oil_flow__l_min_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Hydraulic_oil_flow__l_min_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Hydraulic_oil_flow__l_min__min, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Hydraulic_oil_flow__l_min__min, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Hydraulic_oil_flow__l_min__min, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Hydraulic_oil_pressure__bar_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Hydraulic_oil_pressure__bar_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Hydraulic_oil_pressure__bar_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Hydraulic_oil_pressure__bar__min, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Hydraulic_oil_pressure__bar__min, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Hydraulic_oil_pressure__bar__min, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Fuse__max___1_Jännite__A, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Fuse__max___1_Jännite__A, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Fuse__max___1_Jännite__A, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Fuse__max___2_Jännite__A, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Fuse__max___2_Jännite__A, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Fuse__max___2_Jännite__A, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Starting_current_Ia_In_DOL___Y_D___SOFT_START, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Starting_current_Ia_In_DOL___Y_D___SOFT_START, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Starting_current_Ia_In_DOL___Y_D___SOFT_START, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Control_voltage__V_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Control_voltage__V_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Control_voltage__V_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Oil_quantity__I_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Oil_quantity__I_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Oil_quantity__I_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Oil_quantity_EA__I_, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Oil_quantity_EA__I_, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Oil_quantity_EA__I_, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Oil_content__mg_m__, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Oil_content__mg_m__, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Oil_content__mg_m__, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Air_outlet_T1, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Air_outlet_T1, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Air_outlet_T1, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Air_outlet_T1_water_cooled, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Air_outlet_T1_water_cooled, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Air_outlet_T1_water_cooled, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Condensate_drain_T4, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Condensate_drain_T4, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Condensate_drain_T4, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Pressure_Level__LpA__without_canopy_EA, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Pressure_Level__LpA__without_canopy_EA, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Pressure_Level__LpA__without_canopy_EA, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Pressure_Level__LpA__without_canopy_EW, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Pressure_Level__LpA__without_canopy_EW, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Pressure_Level__LpA__without_canopy_EW, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Pressure_Level__LpA__with_NOVOX_canopy_EA, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Pressure_Level__LpA__with_NOVOX_canopy_EA, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Pressure_Level__LpA__with_NOVOX_canopy_EA, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Pressure_Level__LpA__with_NOVOX_canopy_EW, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Pressure_Level__LpA__with_NOVOX_canopy_EW, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Pressure_Level__LpA__with_NOVOX_canopy_EW, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Uncertainty_Kpa___Kwa, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Uncertainty_Kpa___Kwa, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Uncertainty_Kpa___Kwa, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Weight_without_canopy, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Weight_without_canopy, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Weight_without_canopy, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Weight_with_NOVOX_canopy, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Weight_with_NOVOX_canopy, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Weight_with_NOVOX_canopy, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Weight_with_NOVOX_canopy_EA, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Weight_with_NOVOX_canopy_EA, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Weight_with_NOVOX_canopy_EA, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.General_arrangement_drawing_SW, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.General_arrangement_drawing_SW, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.General_arrangement_drawing_SW, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.General_arrangement_drawing_FW, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.General_arrangement_drawing_FW, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.General_arrangement_drawing_FW, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.General_arrangement_drawing_EA, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.General_arrangement_drawing_EA, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.General_arrangement_drawing_EA, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EA, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EA, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EA, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EW, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EW, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EW, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EW_SW, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EW_SW, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.General_arrangement_drawing_with_NOVOX_canopy_EW_SW, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Cable_gland__Power, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Cable_gland__Power, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Cable_gland__Power, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Cable_gland__Alarm___Signal, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Cable_gland__Alarm___Signal, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Cable_gland__Alarm___Signal, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Lisätietoja, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Lisätietoja, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Lisätietoja, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="row">
-                @Html.LabelFor(model => model.Suunnittelun_kommentit, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-lg-4">
-                    @Html.EditorFor(model => model.Suunnittelun_kommentit, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Suunnittelun_kommentit, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
-            <div class="row">
-                <div class="col-lg-4">
-                    <input type="submit" value="Create DataSheet" class="btn btn-success" />
-                    @Html.ActionLink("Clear", "AddNewDataSheet", "NewDataSheet", null, new { @class = "btn btn-danger" })
-
-                    @Html.ActionLink("ViewData Sheet", "Index", "Data", null, new { @class = "btn btn-info" })
-
-                </div>
-            </div>
-        }
+<table>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>
+            <strong>
+                DataSheet number:
+                @Html.TextBoxFor(model => model.Datasivun_numero, new { @class = "", @onkeypress = "return false;" })
+
+            </strong>
+        </td>
+        <td>
+            <strong>
+                &nbsp; Standard datasheet: &nbsp;
+                @Html.CheckBoxFor(model => model.STD, htmlAttributes: new { @checked = true })
+            </strong>
+        <td>
+            <strong>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Datasheet revision :
+                @Html.EditorFor(model => model.Datasheet_revision, new { htmlAttributes = new { @class = "" } })
+                &nbsp;
+            </strong>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>
+            &nbsp;
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+            <strong>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Revision valid from:
+                @Html.TextBoxFor(model => model.Valid_from, new { @class = "", @onkeypress = "return false;" })
+                @Html.ValidationMessageFor(model => model.Valid_from, "", new { @class = "text-danger" })
+                &nbsp;
+            </strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+            <strong>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Datasheet status:
+                @{
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Käytössä",
+                        Value = "Käytössä"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Ei käytössä",
+                        Value = "Ei käytössä",
+                        Selected = true
+                    });
+
+                }
+                &nbsp;
+                &nbsp;
+                @Html.DropDownListFor(model => model.Datasheet_status, listItems, "-- Select Status --")
+            </strong>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+            <strong>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Datasheet create by:
+                @Html.TextBoxFor(model => model.Datasivun_numero, new { @class = "", @onkeypress = "return false;" })
+            </strong>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<div>
+    <table>
+        <tr>
+            <td>
+                <strong>
+                    Datasheet Extra note:&nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.TextBoxFor(model => model.Lisätietoja, new { @class = "", @onkeypress = "return false;" })
+                </strong>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <strong>
+                    Engineering Extra note:
+                    @Html.TextBoxFor(model => model.Suunnittelun_kommentit, new { @class = "", @onkeypress = "return false;" })
+                </strong>
+            </td>
+        </tr>
+    </table>
+</div>
+
+&nbsp;
+&nbsp;
+<div>
+
+    <strong>
+        @Html.Label("GENERAL DATA :", new { @class = "lbl-danger" })
+    </strong>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>Code:&nbsp;</td>
+            <td> @Html.TextBoxFor(model => model.Code, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>1. Voltage:</td>
+            <td> @Html.TextBoxFor(model => model.C1_Voltage, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Model:</td>
+            <td> @Html.TextBoxFor(model => model.Model, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>1. Frequency:</td>
+            <td> @Html.TextBoxFor(model => model.C1_Frequency, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+
+            <td>Maximum pressure (barg):</td>
+
+            <td> @Html.TextBoxFor(model => model.Maximum_working_pressure_barg)</td>
+
+            <td>1. Starting type:</td>
+            <td> @Html.TextBoxFor(model => model.C1_Starting_type, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Normal working pressure (barg):</td>
+            <td> @Html.TextBoxFor(model => model.Normal_working_pressure_barg, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>2. Voltage:</td>
+            <td> @Html.TextBoxFor(model => model.C1_Voltage, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Minimum working pressure (barg):</td>
+            <td> @Html.TextBoxFor(model => model.Minimum_working_pressure_barg, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>2. Frequency:</td>
+            <td> @Html.TextBoxFor(model => model.C2_Frequency, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Cooling:</td>
+            <td> @Html.TextBoxFor(model => model.Cooling, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>2. Starting type:</td>
+            <td> @Html.TextBoxFor(model => model.C2_Starting_type, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Maximum ambient temperature (C°):</td>
+            <td> @Html.TextBoxFor(model => model.Maximum_ambient_temperature_C, new { @class = "", @onkeypress = "return false;" })</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</div>
+<tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+</tr>
+<div class="row">
+    <div class="col-lg-4">
+        <input type="submit" value="Create DataSheet" class="btn btn-success" />
+        @Html.ActionLink("Clear", "AddNewDataSheet", "NewDataSheet", null, new { @class = "btn btn-danger" })
+
+        @Html.ActionLink("ViewData Sheet", "Index", "Data", null, new { @class = "btn btn-info" })
 
     </div>
 </div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#Valid_from").datepicker
+            ({
+                dateFormat: "yy-mm-dd",
+                changeMonth: true,
+                numberOfMonths: 1,
+                changeYear: true,
+                yearRange: new Date().getFullYear() + ':' + new Date().getFullYear(),
+                onSelect: function (date) {
+
+                    $('#ToDate').prop('disabled', false);
+                    var dt2 = $('#ToDate');
+                    var startDate = $(this).datepicker('getDate');
+                    var minDate = $(this).datepicker('getDate');
+                    dt2.datepicker('setDate', minDate);
+                    startDate.setDate(startDate.getDate() + 60);
+                    //sets dt2 maxDate to the last day of 30 days window
+                    dt2.datepicker('option', 'maxDate', startDate);
+                    dt2.datepicker('option', 'minDate', minDate);
+                    $(this).datepicker('option', 'minDate', minDate);
+
+                }
+            });
+    });
+    $(document).ready(function () {
+        $("#ToDate").datepicker
+            ({
+                dateFormat: "yy-mm-dd",
+                changeMonth: true,
+                changeYear: true,
+                numberOfMonths: 1,
+                yearRange: new Date().getFullYear() + ':' + new Date().getFullYear(),
+                onSelect: function (date) {
+
+                }
+            });
+    });
+</script>

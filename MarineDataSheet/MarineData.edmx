@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MarinedataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MarineDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Data">
           <Key>
             <PropertyRef Name="Laskuri" />
@@ -13,12 +13,12 @@
           <Property Name="STD" Type="bit" Nullable="false" />
           <Property Name="Datasivun numero" Type="nvarchar" MaxLength="10" />
           <Property Name="Datasheet revision" Type="nvarchar" MaxLength="50" />
-          <Property Name="Valid from" Type="datetime" Nullable="false" />
-          <Property Name="Datasheet status" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Valid from" Type="datetime" />
+          <Property Name="Datasheet status" Type="nvarchar" MaxLength="50" />
           <Property Name="Code" Type="nvarchar" MaxLength="50" />
           <Property Name="Datasheet created by" Type="nvarchar" MaxLength="50" />
           <Property Name="Model" Type="nvarchar" MaxLength="50" />
-          <Property Name="Maximum working pressure (barg)" Type="float" />
+          <Property Name="Maximum working pressure barg" Type="float" />
           <Property Name="Cooling" Type="nvarchar" MaxLength="50" />
           <Property Name="1 Voltage" Type="nvarchar" MaxLength="50" />
           <Property Name="1 Frequency" Type="nvarchar" MaxLength="50" />
@@ -26,82 +26,82 @@
           <Property Name="2 Voltage" Type="nvarchar" MaxLength="50" />
           <Property Name="2 Frequency" Type="nvarchar" MaxLength="50" />
           <Property Name="2 Starting type" Type="nvarchar" MaxLength="50" />
-          <Property Name="Normal working pressure (barg)" Type="float" />
-          <Property Name="Capacity at normal working pressure (m³/min)" Type="float" />
-          <Property Name="Capacity at normal working pressure (m³/min)_75%" Type="float" />
-          <Property Name="Capacity at normal working pressure (m³/min)_50%" Type="float" />
-          <Property Name="Capacity at normal working pressure (m³/min)_25%" Type="float" />
-          <Property Name="Capacity at normal working pressure (m³/min)_min" Type="float" />
-          <Property Name="Volumetric efficiency %" Type="nvarchar" MaxLength="50" />
+          <Property Name="Normal working pressure barg" Type="varchar" MaxLength="25" />
+          <Property Name="Capacity at normal working pressure m min" Type="float" />
+          <Property Name="Capacity at normal working pressure m min 75" Type="float" />
+          <Property Name="Capacity at normal working pressure m min 50" Type="float" />
+          <Property Name="Capacity at normal working pressure m min 25" Type="float" />
+          <Property Name="Capacity at normal working pressure m min min" Type="float" />
+          <Property Name="Volumetric efficiency" Type="nvarchar" MaxLength="50" />
           <Property Name="Air end volume per revolution" Type="nvarchar" MaxLength="50" />
-          <Property Name="Shaft power at normal working pressure (kW)" Type="float" />
-          <Property Name="Shaft power at normal working pressure (kW)_75%" Type="float" />
-          <Property Name="Shaft power at normal working pressure (kW)_50%" Type="float" />
-          <Property Name="Shaft power at normal working pressure (kW)_25%" Type="float" />
-          <Property Name="Shaft power at normal working pressure (kW)_min" Type="float" />
-          <Property Name="Specific power consumption (kW/m3/min)" Type="nvarchar" MaxLength="50" />
-          <Property Name="Extra capacity %" Type="nvarchar" MaxLength="50" />
-          <Property Name="Minimum working pressure (barg)" Type="float" />
+          <Property Name="Shaft power at normal working pressure kW" Type="float" />
+          <Property Name="Shaft power at normal working pressure kW 75" Type="float" />
+          <Property Name="Shaft power at normal working pressure kW 50" Type="float" />
+          <Property Name="Shaft power at normal working pressure kW 25" Type="float" />
+          <Property Name="Shaft power at normal working pressure kW min" Type="float" />
+          <Property Name="Specific power consumption kW m min" Type="nvarchar" MaxLength="50" />
+          <Property Name="Extra capacity" Type="nvarchar" MaxLength="50" />
+          <Property Name="Minimum working pressure barg" Type="float" />
           <Property Name="Frequency min" Type="nvarchar" MaxLength="50" />
           <Property Name="Frequency max" Type="nvarchar" MaxLength="50" />
-          <Property Name="Transmission:" Type="nvarchar" MaxLength="50" />
-          <Property Name="Transmission: Gear, i=" Type="float" />
-          <Property Name="Motor pulley:" Type="int" />
-          <Property Name="Air end pulley:" Type="int" />
-          <Property Name="Maximum ambient temperature (C°)" Type="float" />
-          <Property Name="Compressed air temperature above cooling medium temperature (C°)" Type="float" />
-          <Property Name="Cooling air flow (m³/s)" Type="float" />
-          <Property Name="Cooling air flow (m³/s)_water cooled" Type="float" />
+          <Property Name="Transmission" Type="nvarchar" MaxLength="50" />
+          <Property Name="Transmission Gear i" Type="float" />
+          <Property Name="Motor pulley" Type="int" />
+          <Property Name="Air end pulley" Type="int" />
+          <Property Name="Maximum ambient temperature C" Type="float" />
+          <Property Name="Compressed air temperature above cooling medium temperature C" Type="float" />
+          <Property Name="Cooling air flow m s" Type="float" />
+          <Property Name="Cooling air flow m s water cooled" Type="float" />
           <Property Name="Maximum cooling air pressure drop (Pa)" Type="float" />
-          <Property Name="Water in (C°), Fresh water cooled" Type="float" />
-          <Property Name="Water out (C°), Fresh water cooled" Type="float" />
-          <Property Name="Water in (C°), Sea water cooled" Type="float" />
-          <Property Name="Water out (C°), Sea water cooled" Type="float" />
-          <Property Name="Extra factor for water flow at 60% humidity_fresh" Type="nvarchar" MaxLength="50" />
-          <Property Name="Minimum water inlet pressure with zero back (bar)/(MPa) (Serial)" Type="float" />
-          <Property Name="Minimum water inlet pressure with zero ba (bar)/(MPa) (Parallel)" Type="float" />
-          <Property Name="Minimum water inlet pressure with zero back (Serial)_sea" Type="float" />
-          <Property Name="Minimum water inlet pressure with zero back (Parallel)_sea" Type="float" />
-          <Property Name="Minimum water inlet pressure with zero back (bar)/(MPa)_Oil" Type="float" />
-          <Property Name="Minimum water inlet pressure with zero back (bar)/(MPa)_After" Type="float" />
-          <Property Name="Maximum inlet pressure (barg)" Type="float" />
-          <Property Name="Water in / out T2 / T3" Type="nvarchar" MaxLength="50" />
-          <Property Name="Heat dissipation (kW) EA" Type="nvarchar" MaxLength="50" />
-          <Property Name="Heat dissipation (kW) EW" Type="nvarchar" MaxLength="50" />
-          <Property Name="Main motor : F-class, IP 55 (kW)" Type="float" />
+          <Property Name="Water in C Fresh water cooled" Type="float" />
+          <Property Name="Water out C Fresh water cooled" Type="float" />
+          <Property Name="Water in C Sea water cooled" Type="float" />
+          <Property Name="Water out C Sea water cooled" Type="float" />
+          <Property Name="Extra factor for water flow at 60 humidity fresh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Minimum water inlet pressure with zero back bar MPa Serial" Type="float" />
+          <Property Name="Minimum water inlet pressure with zero ba bar MPa Parallel" Type="float" />
+          <Property Name="Minimum water inlet pressure with zero back Serial sea" Type="float" />
+          <Property Name="Minimum water inlet pressure with zero back Parallel sea" Type="float" />
+          <Property Name="Minimum water inlet pressure with zero back bar MPa Oil" Type="float" />
+          <Property Name="Minimum water inlet pressure with zero back bar MPa After" Type="float" />
+          <Property Name="Maximum inlet pressure barg" Type="float" />
+          <Property Name="Water in out T2 T3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Heat dissipation kW EA" Type="nvarchar" MaxLength="50" />
+          <Property Name="Heat dissipation kW EW" Type="nvarchar" MaxLength="50" />
+          <Property Name="Main motor F class IP 55 kW" Type="float" />
           <Property Name="Main motor max power" Type="float" />
           <Property Name="Main motor protection details" Type="nvarchar" MaxLength="50" />
           <Property Name="Main motor temperature rise" Type="nvarchar" MaxLength="50" />
-          <Property Name="Speed of rotation (rpm)" Type="float" />
-          <Property Name="Speed of rotation (rpm)_min" Type="float" />
+          <Property Name="Speed of rotation rpm" Type="float" />
+          <Property Name="Speed of rotation rpm min" Type="float" />
           <Property Name="Motor cos fii" Type="float" />
           <Property Name="Motor efficiency" Type="float" />
-          <Property Name="Fan motor (kW) EA" Type="float" />
-          <Property Name="Fan motor (kW) EW" Type="float" />
-          <Property Name="Speed of rotation (rpm) - fan motor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fan motor kW EA" Type="float" />
+          <Property Name="Fan motor kW EW" Type="float" />
+          <Property Name="Speed of rotation rpm  fan motor" Type="nvarchar" MaxLength="50" />
           <Property Name="Voltage tolerance" Type="nvarchar" MaxLength="50" />
           <Property Name="Hydraulic main motor" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hydraulic motor speed of rotation (Max)" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hydraulic motor speed of rotation (Min)" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hydraulic oil flow (l/min)" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hydraulic oil flow (l/min)_min" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hydraulic oil pressure (bar)" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hydraulic oil pressure (bar)_min" Type="nvarchar" MaxLength="50" />
-          <Property Name="Fuse (max) (1 Jännite) A" Type="nvarchar" MaxLength="50" />
-          <Property Name="Fuse (max) (2 Jännite) A" Type="nvarchar" MaxLength="50" />
-          <Property Name="Starting current Ia/In DOL / Y/D / SOFT-START" Type="nvarchar" MaxLength="50" />
-          <Property Name="Control voltage (V)" Type="nvarchar" MaxLength="50" />
-          <Property Name="Oil quantity (I)" Type="float" />
-          <Property Name="Oil quantity EA (I)" Type="float" />
-          <Property Name="Oil content (mg/m³)" Type="float" />
+          <Property Name="Hydraulic motor speed of rotation Max" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hydraulic motor speed of rotation Min" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hydraulic oil flow l min" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hydraulic oil flow l min min" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hydraulic oil pressure bar" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hydraulic oil pressure bar min" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fuse max 1 Jännite A" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fuse max 2 Jännite A" Type="nvarchar" MaxLength="50" />
+          <Property Name="Starting current Ia In DOL YD SOFT START" Type="nvarchar" MaxLength="50" />
+          <Property Name="Control voltage V" Type="nvarchar" MaxLength="50" />
+          <Property Name="Oil quantity I" Type="float" />
+          <Property Name="Oil quantity EA I" Type="float" />
+          <Property Name="Oil content mg m" Type="float" />
           <Property Name="Air outlet T1" Type="nvarchar" MaxLength="50" />
-          <Property Name="Air outlet T1_water cooled" Type="nvarchar" MaxLength="50" />
+          <Property Name="Air outlet T1 water cooled" Type="nvarchar" MaxLength="50" />
           <Property Name="Condensate drain T4" Type="nvarchar" MaxLength="50" />
-          <Property Name="Pressure Level (LpA) without canopy EA" Type="nvarchar" MaxLength="50" />
-          <Property Name="Pressure Level (LpA) without canopy EW" Type="nvarchar" MaxLength="50" />
-          <Property Name="Pressure Level (LpA) with NOVOX canopy EA" Type="nvarchar" MaxLength="50" />
-          <Property Name="Pressure Level (LpA) with NOVOX canopy EW" Type="nvarchar" MaxLength="50" />
-          <Property Name="Uncertainty Kpa / Kwa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pressure Level LpA without canopy EA" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pressure Level LpA without canopy EW" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pressure Level LpA with NOVOX canopy EA" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pressure Level LpA with NOVOX canopy EW" Type="nvarchar" MaxLength="50" />
+          <Property Name="Uncertainty Kpa Kwa" Type="nvarchar" MaxLength="50" />
           <Property Name="Weight without canopy" Type="nvarchar" MaxLength="255" />
           <Property Name="Weight with NOVOX canopy" Type="nvarchar" MaxLength="255" />
           <Property Name="Weight with NOVOX canopy EA" Type="nvarchar" MaxLength="50" />
@@ -112,7 +112,7 @@
           <Property Name="General arrangement drawing with NOVOX canopy EW" Type="nvarchar" MaxLength="50" />
           <Property Name="General arrangement drawing with NOVOX canopy EW SW" Type="nvarchar" MaxLength="50" />
           <Property Name="Cable gland: Power" Type="nvarchar" MaxLength="50" />
-          <Property Name="Cable gland: Alarm / Signal" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cable gland Alarm Signal" Type="nvarchar" MaxLength="50" />
           <Property Name="Lisätietoja" Type="nvarchar" MaxLength="100" />
           <Property Name="Suunnittelun kommentit" Type="nvarchar" MaxLength="100" />
         </EntityType>
@@ -222,7 +222,7 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
           <Property Name="F86" Type="nvarchar" MaxLength="255" />
           <Property Name="F87" Type="nvarchar" MaxLength="255" />
         </EntityType>-->
-        <EntityContainer Name="MarinedataModelStoreContainer">
+        <EntityContainer Name="MarineDataModelStoreContainer">
           <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jälkijäähdytinteho korjauskerroin" EntityType="Self.Jälkijäähdytinteho korjauskerroin" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -232,10 +232,11 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
     FROM [dbo].[Jälkijäähdytinteho korjauskerroin] AS [Jälkijäähdytinteho korjauskerroin]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MarinedataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MarineDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Datum">
           <Key>
             <PropertyRef Name="Laskuri" />
@@ -244,12 +245,12 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
           <Property Name="STD" Type="Boolean" Nullable="false" />
           <Property Name="Datasivun_numero" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Datasheet_revision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Valid_from" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Datasheet_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Valid_from" Type="DateTime" Precision="3" />
+          <Property Name="Datasheet_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Datasheet_created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Maximum_working_pressure__barg_" Type="Double" />
+          <Property Name="Maximum_working_pressure_barg" Type="Double" />
           <Property Name="Cooling" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="C1_Voltage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="C1_Frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -257,82 +258,82 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
           <Property Name="C2_Voltage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="C2_Frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="C2_Starting_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Normal_working_pressure__barg_" Type="Double" />
-          <Property Name="Capacity_at_normal_working_pressure__m__min_" Type="Double" />
-          <Property Name="Capacity_at_normal_working_pressure__m__min__75_" Type="Double" />
-          <Property Name="Capacity_at_normal_working_pressure__m__min__50_" Type="Double" />
-          <Property Name="Capacity_at_normal_working_pressure__m__min__25_" Type="Double" />
-          <Property Name="Capacity_at_normal_working_pressure__m__min__min" Type="Double" />
-          <Property Name="Volumetric_efficiency__" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Normal_working_pressure_barg" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Capacity_at_normal_working_pressure_m_min" Type="Double" />
+          <Property Name="Capacity_at_normal_working_pressure_m_min_75" Type="Double" />
+          <Property Name="Capacity_at_normal_working_pressure_m_min_50" Type="Double" />
+          <Property Name="Capacity_at_normal_working_pressure_m_min_25" Type="Double" />
+          <Property Name="Capacity_at_normal_working_pressure_m_min_min" Type="Double" />
+          <Property Name="Volumetric_efficiency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Air_end_volume_per_revolution" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Shaft_power_at_normal_working_pressure__kW_" Type="Double" />
-          <Property Name="Shaft_power_at_normal_working_pressure__kW__75_" Type="Double" />
-          <Property Name="Shaft_power_at_normal_working_pressure__kW__50_" Type="Double" />
-          <Property Name="Shaft_power_at_normal_working_pressure__kW__25_" Type="Double" />
-          <Property Name="Shaft_power_at_normal_working_pressure__kW__min" Type="Double" />
-          <Property Name="Specific_power_consumption__kW_m3_min_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Extra_capacity__" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Minimum_working_pressure__barg_" Type="Double" />
+          <Property Name="Shaft_power_at_normal_working_pressure_kW" Type="Double" />
+          <Property Name="Shaft_power_at_normal_working_pressure_kW_75" Type="Double" />
+          <Property Name="Shaft_power_at_normal_working_pressure_kW_50" Type="Double" />
+          <Property Name="Shaft_power_at_normal_working_pressure_kW_25" Type="Double" />
+          <Property Name="Shaft_power_at_normal_working_pressure_kW_min" Type="Double" />
+          <Property Name="Specific_power_consumption_kW_m_min" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Extra_capacity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Minimum_working_pressure_barg" Type="Double" />
           <Property Name="Frequency_min" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Frequency_max" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Transmission_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Transmission__Gear__i_" Type="Double" />
-          <Property Name="Motor_pulley_" Type="Int32" />
-          <Property Name="Air_end_pulley_" Type="Int32" />
-          <Property Name="Maximum_ambient_temperature__C__" Type="Double" />
-          <Property Name="Compressed_air_temperature_above_cooling_medium_temperature__C__" Type="Double" />
-          <Property Name="Cooling_air_flow__m__s_" Type="Double" />
-          <Property Name="Cooling_air_flow__m__s__water_cooled" Type="Double" />
+          <Property Name="Transmission" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Transmission_Gear_i" Type="Double" />
+          <Property Name="Motor_pulley" Type="Int32" />
+          <Property Name="Air_end_pulley" Type="Int32" />
+          <Property Name="Maximum_ambient_temperature_C" Type="Double" />
+          <Property Name="Compressed_air_temperature_above_cooling_medium_temperature_C" Type="Double" />
+          <Property Name="Cooling_air_flow_m_s" Type="Double" />
+          <Property Name="Cooling_air_flow_m_s_water_cooled" Type="Double" />
           <Property Name="Maximum_cooling_air_pressure_drop__Pa_" Type="Double" />
-          <Property Name="Water_in__C____Fresh_water_cooled" Type="Double" />
-          <Property Name="Water_out__C____Fresh_water_cooled" Type="Double" />
-          <Property Name="Water_in__C____Sea_water_cooled" Type="Double" />
-          <Property Name="Water_out__C____Sea_water_cooled" Type="Double" />
-          <Property Name="Extra_factor_for_water_flow_at_60__humidity_fresh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Minimum_water_inlet_pressure_with_zero_back__bar___MPa___Serial_" Type="Double" />
-          <Property Name="Minimum_water_inlet_pressure_with_zero_ba__bar___MPa___Parallel_" Type="Double" />
-          <Property Name="Minimum_water_inlet_pressure_with_zero_back__Serial__sea" Type="Double" />
-          <Property Name="Minimum_water_inlet_pressure_with_zero_back__Parallel__sea" Type="Double" />
-          <Property Name="Minimum_water_inlet_pressure_with_zero_back__bar___MPa__Oil" Type="Double" />
-          <Property Name="Minimum_water_inlet_pressure_with_zero_back__bar___MPa__After" Type="Double" />
-          <Property Name="Maximum_inlet_pressure__barg_" Type="Double" />
-          <Property Name="Water_in___out_T2___T3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Heat_dissipation__kW__EA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Heat_dissipation__kW__EW" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Main_motor___F_class__IP_55__kW_" Type="Double" />
+          <Property Name="Water_in_C_Fresh_water_cooled" Type="Double" />
+          <Property Name="Water_out_C_Fresh_water_cooled" Type="Double" />
+          <Property Name="Water_in_C_Sea_water_cooled" Type="Double" />
+          <Property Name="Water_out_C_Sea_water_cooled" Type="Double" />
+          <Property Name="Extra_factor_for_water_flow_at_60_humidity_fresh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Minimum_water_inlet_pressure_with_zero_back_bar_MPa_Serial" Type="Double" />
+          <Property Name="Minimum_water_inlet_pressure_with_zero_ba_bar_MPa_Parallel" Type="Double" />
+          <Property Name="Minimum_water_inlet_pressure_with_zero_back_Serial_sea" Type="Double" />
+          <Property Name="Minimum_water_inlet_pressure_with_zero_back_Parallel_sea" Type="Double" />
+          <Property Name="Minimum_water_inlet_pressure_with_zero_back_bar_MPa_Oil" Type="Double" />
+          <Property Name="Minimum_water_inlet_pressure_with_zero_back_bar_MPa_After" Type="Double" />
+          <Property Name="Maximum_inlet_pressure_barg" Type="Double" />
+          <Property Name="Water_in_out_T2_T3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Heat_dissipation_kW_EA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Heat_dissipation_kW_EW" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Main_motor_F_class_IP_55_kW" Type="Double" />
           <Property Name="Main_motor_max_power" Type="Double" />
           <Property Name="Main_motor_protection_details" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Main_motor_temperature_rise" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Speed_of_rotation__rpm_" Type="Double" />
-          <Property Name="Speed_of_rotation__rpm__min" Type="Double" />
+          <Property Name="Speed_of_rotation_rpm" Type="Double" />
+          <Property Name="Speed_of_rotation_rpm_min" Type="Double" />
           <Property Name="Motor_cos_fii" Type="Double" />
           <Property Name="Motor_efficiency" Type="Double" />
-          <Property Name="Fan_motor__kW__EA" Type="Double" />
-          <Property Name="Fan_motor__kW__EW" Type="Double" />
-          <Property Name="Speed_of_rotation__rpm____fan_motor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fan_motor_kW_EA" Type="Double" />
+          <Property Name="Fan_motor_kW_EW" Type="Double" />
+          <Property Name="Speed_of_rotation_rpm__fan_motor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Voltage_tolerance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Hydraulic_main_motor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Hydraulic_motor_speed_of_rotation__Max_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Hydraulic_motor_speed_of_rotation__Min_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Hydraulic_oil_flow__l_min_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Hydraulic_oil_flow__l_min__min" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Hydraulic_oil_pressure__bar_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Hydraulic_oil_pressure__bar__min" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Fuse__max___1_Jännite__A" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Fuse__max___2_Jännite__A" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Starting_current_Ia_In_DOL___Y_D___SOFT_START" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Control_voltage__V_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Oil_quantity__I_" Type="Double" />
-          <Property Name="Oil_quantity_EA__I_" Type="Double" />
-          <Property Name="Oil_content__mg_m__" Type="Double" />
+          <Property Name="Hydraulic_motor_speed_of_rotation_Max" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hydraulic_motor_speed_of_rotation_Min" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hydraulic_oil_flow_l_min" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hydraulic_oil_flow_l_min_min" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hydraulic_oil_pressure_bar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hydraulic_oil_pressure_bar_min" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fuse_max_1_Jännite_A" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fuse_max_2_Jännite_A" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Starting_current_Ia_In_DOL_YD_SOFT_START" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Control_voltage_V" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Oil_quantity_I" Type="Double" />
+          <Property Name="Oil_quantity_EA_I" Type="Double" />
+          <Property Name="Oil_content_mg_m" Type="Double" />
           <Property Name="Air_outlet_T1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Air_outlet_T1_water_cooled" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Condensate_drain_T4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pressure_Level__LpA__without_canopy_EA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pressure_Level__LpA__without_canopy_EW" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pressure_Level__LpA__with_NOVOX_canopy_EA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pressure_Level__LpA__with_NOVOX_canopy_EW" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Uncertainty_Kpa___Kwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pressure_Level_LpA_without_canopy_EA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pressure_Level_LpA_without_canopy_EW" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pressure_Level_LpA_with_NOVOX_canopy_EA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pressure_Level_LpA_with_NOVOX_canopy_EW" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Uncertainty_Kpa_Kwa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Weight_without_canopy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Weight_with_NOVOX_canopy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Weight_with_NOVOX_canopy_EA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -343,7 +344,7 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
           <Property Name="General_arrangement_drawing_with_NOVOX_canopy_EW" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="General_arrangement_drawing_with_NOVOX_canopy_EW_SW" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Cable_gland__Power" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Cable_gland__Alarm___Signal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cable_gland_Alarm_Signal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Lisätietoja" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Suunnittelun_kommentit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -355,7 +356,7 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
           <Property Name="Maximum_working_pressure__barg_" Type="Double" />
           <Property Name="Korjauskerroin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="MarinedataEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MarineDataEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Data" EntityType="Self.Datum" />
           <EntitySet Name="Jälkijäähdytinteho_korjauskerroin" EntityType="Self.Jälkijäähdytinteho_korjauskerroin" />
         </EntityContainer>
@@ -364,9 +365,9 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MarinedataModelStoreContainer" CdmEntityContainer="MarinedataEntities">
+        <EntityContainerMapping StorageEntityContainer="MarineDataModelStoreContainer" CdmEntityContainer="MarineDataEntities">
           <EntitySetMapping Name="Data">
-            <EntityTypeMapping TypeName="MarinedataModel.Datum">
+            <EntityTypeMapping TypeName="MarineDataModel.Datum">
               <MappingFragment StoreEntitySet="Data">
                 <ScalarProperty Name="Laskuri" ColumnName="Laskuri" />
                 <ScalarProperty Name="STD" ColumnName="STD" />
@@ -377,7 +378,7 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Datasheet_created_by" ColumnName="Datasheet created by" />
                 <ScalarProperty Name="Model" ColumnName="Model" />
-                <ScalarProperty Name="Maximum_working_pressure__barg_" ColumnName="Maximum working pressure (barg)" />
+                <ScalarProperty Name="Maximum_working_pressure_barg" ColumnName="Maximum working pressure barg" />
                 <ScalarProperty Name="Cooling" ColumnName="Cooling" />
                 <ScalarProperty Name="C1_Voltage" ColumnName="1 Voltage" />
                 <ScalarProperty Name="C1_Frequency" ColumnName="1 Frequency" />
@@ -385,82 +386,82 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
                 <ScalarProperty Name="C2_Voltage" ColumnName="2 Voltage" />
                 <ScalarProperty Name="C2_Frequency" ColumnName="2 Frequency" />
                 <ScalarProperty Name="C2_Starting_type" ColumnName="2 Starting type" />
-                <ScalarProperty Name="Normal_working_pressure__barg_" ColumnName="Normal working pressure (barg)" />
-                <ScalarProperty Name="Capacity_at_normal_working_pressure__m__min_" ColumnName="Capacity at normal working pressure (m³/min)" />
-                <ScalarProperty Name="Capacity_at_normal_working_pressure__m__min__75_" ColumnName="Capacity at normal working pressure (m³/min)_75%" />
-                <ScalarProperty Name="Capacity_at_normal_working_pressure__m__min__50_" ColumnName="Capacity at normal working pressure (m³/min)_50%" />
-                <ScalarProperty Name="Capacity_at_normal_working_pressure__m__min__25_" ColumnName="Capacity at normal working pressure (m³/min)_25%" />
-                <ScalarProperty Name="Capacity_at_normal_working_pressure__m__min__min" ColumnName="Capacity at normal working pressure (m³/min)_min" />
-                <ScalarProperty Name="Volumetric_efficiency__" ColumnName="Volumetric efficiency %" />
+                <ScalarProperty Name="Normal_working_pressure_barg" ColumnName="Normal working pressure barg" />
+                <ScalarProperty Name="Capacity_at_normal_working_pressure_m_min" ColumnName="Capacity at normal working pressure m min" />
+                <ScalarProperty Name="Capacity_at_normal_working_pressure_m_min_75" ColumnName="Capacity at normal working pressure m min 75" />
+                <ScalarProperty Name="Capacity_at_normal_working_pressure_m_min_50" ColumnName="Capacity at normal working pressure m min 50" />
+                <ScalarProperty Name="Capacity_at_normal_working_pressure_m_min_25" ColumnName="Capacity at normal working pressure m min 25" />
+                <ScalarProperty Name="Capacity_at_normal_working_pressure_m_min_min" ColumnName="Capacity at normal working pressure m min min" />
+                <ScalarProperty Name="Volumetric_efficiency" ColumnName="Volumetric efficiency" />
                 <ScalarProperty Name="Air_end_volume_per_revolution" ColumnName="Air end volume per revolution" />
-                <ScalarProperty Name="Shaft_power_at_normal_working_pressure__kW_" ColumnName="Shaft power at normal working pressure (kW)" />
-                <ScalarProperty Name="Shaft_power_at_normal_working_pressure__kW__75_" ColumnName="Shaft power at normal working pressure (kW)_75%" />
-                <ScalarProperty Name="Shaft_power_at_normal_working_pressure__kW__50_" ColumnName="Shaft power at normal working pressure (kW)_50%" />
-                <ScalarProperty Name="Shaft_power_at_normal_working_pressure__kW__25_" ColumnName="Shaft power at normal working pressure (kW)_25%" />
-                <ScalarProperty Name="Shaft_power_at_normal_working_pressure__kW__min" ColumnName="Shaft power at normal working pressure (kW)_min" />
-                <ScalarProperty Name="Specific_power_consumption__kW_m3_min_" ColumnName="Specific power consumption (kW/m3/min)" />
-                <ScalarProperty Name="Extra_capacity__" ColumnName="Extra capacity %" />
-                <ScalarProperty Name="Minimum_working_pressure__barg_" ColumnName="Minimum working pressure (barg)" />
+                <ScalarProperty Name="Shaft_power_at_normal_working_pressure_kW" ColumnName="Shaft power at normal working pressure kW" />
+                <ScalarProperty Name="Shaft_power_at_normal_working_pressure_kW_75" ColumnName="Shaft power at normal working pressure kW 75" />
+                <ScalarProperty Name="Shaft_power_at_normal_working_pressure_kW_50" ColumnName="Shaft power at normal working pressure kW 50" />
+                <ScalarProperty Name="Shaft_power_at_normal_working_pressure_kW_25" ColumnName="Shaft power at normal working pressure kW 25" />
+                <ScalarProperty Name="Shaft_power_at_normal_working_pressure_kW_min" ColumnName="Shaft power at normal working pressure kW min" />
+                <ScalarProperty Name="Specific_power_consumption_kW_m_min" ColumnName="Specific power consumption kW m min" />
+                <ScalarProperty Name="Extra_capacity" ColumnName="Extra capacity" />
+                <ScalarProperty Name="Minimum_working_pressure_barg" ColumnName="Minimum working pressure barg" />
                 <ScalarProperty Name="Frequency_min" ColumnName="Frequency min" />
                 <ScalarProperty Name="Frequency_max" ColumnName="Frequency max" />
-                <ScalarProperty Name="Transmission_" ColumnName="Transmission:" />
-                <ScalarProperty Name="Transmission__Gear__i_" ColumnName="Transmission: Gear, i=" />
-                <ScalarProperty Name="Motor_pulley_" ColumnName="Motor pulley:" />
-                <ScalarProperty Name="Air_end_pulley_" ColumnName="Air end pulley:" />
-                <ScalarProperty Name="Maximum_ambient_temperature__C__" ColumnName="Maximum ambient temperature (C°)" />
-                <ScalarProperty Name="Compressed_air_temperature_above_cooling_medium_temperature__C__" ColumnName="Compressed air temperature above cooling medium temperature (C°)" />
-                <ScalarProperty Name="Cooling_air_flow__m__s_" ColumnName="Cooling air flow (m³/s)" />
-                <ScalarProperty Name="Cooling_air_flow__m__s__water_cooled" ColumnName="Cooling air flow (m³/s)_water cooled" />
+                <ScalarProperty Name="Transmission" ColumnName="Transmission" />
+                <ScalarProperty Name="Transmission_Gear_i" ColumnName="Transmission Gear i" />
+                <ScalarProperty Name="Motor_pulley" ColumnName="Motor pulley" />
+                <ScalarProperty Name="Air_end_pulley" ColumnName="Air end pulley" />
+                <ScalarProperty Name="Maximum_ambient_temperature_C" ColumnName="Maximum ambient temperature C" />
+                <ScalarProperty Name="Compressed_air_temperature_above_cooling_medium_temperature_C" ColumnName="Compressed air temperature above cooling medium temperature C" />
+                <ScalarProperty Name="Cooling_air_flow_m_s" ColumnName="Cooling air flow m s" />
+                <ScalarProperty Name="Cooling_air_flow_m_s_water_cooled" ColumnName="Cooling air flow m s water cooled" />
                 <ScalarProperty Name="Maximum_cooling_air_pressure_drop__Pa_" ColumnName="Maximum cooling air pressure drop (Pa)" />
-                <ScalarProperty Name="Water_in__C____Fresh_water_cooled" ColumnName="Water in (C°), Fresh water cooled" />
-                <ScalarProperty Name="Water_out__C____Fresh_water_cooled" ColumnName="Water out (C°), Fresh water cooled" />
-                <ScalarProperty Name="Water_in__C____Sea_water_cooled" ColumnName="Water in (C°), Sea water cooled" />
-                <ScalarProperty Name="Water_out__C____Sea_water_cooled" ColumnName="Water out (C°), Sea water cooled" />
-                <ScalarProperty Name="Extra_factor_for_water_flow_at_60__humidity_fresh" ColumnName="Extra factor for water flow at 60% humidity_fresh" />
-                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_back__bar___MPa___Serial_" ColumnName="Minimum water inlet pressure with zero back (bar)/(MPa) (Serial)" />
-                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_ba__bar___MPa___Parallel_" ColumnName="Minimum water inlet pressure with zero ba (bar)/(MPa) (Parallel)" />
-                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_back__Serial__sea" ColumnName="Minimum water inlet pressure with zero back (Serial)_sea" />
-                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_back__Parallel__sea" ColumnName="Minimum water inlet pressure with zero back (Parallel)_sea" />
-                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_back__bar___MPa__Oil" ColumnName="Minimum water inlet pressure with zero back (bar)/(MPa)_Oil" />
-                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_back__bar___MPa__After" ColumnName="Minimum water inlet pressure with zero back (bar)/(MPa)_After" />
-                <ScalarProperty Name="Maximum_inlet_pressure__barg_" ColumnName="Maximum inlet pressure (barg)" />
-                <ScalarProperty Name="Water_in___out_T2___T3" ColumnName="Water in / out T2 / T3" />
-                <ScalarProperty Name="Heat_dissipation__kW__EA" ColumnName="Heat dissipation (kW) EA" />
-                <ScalarProperty Name="Heat_dissipation__kW__EW" ColumnName="Heat dissipation (kW) EW" />
-                <ScalarProperty Name="Main_motor___F_class__IP_55__kW_" ColumnName="Main motor : F-class, IP 55 (kW)" />
+                <ScalarProperty Name="Water_in_C_Fresh_water_cooled" ColumnName="Water in C Fresh water cooled" />
+                <ScalarProperty Name="Water_out_C_Fresh_water_cooled" ColumnName="Water out C Fresh water cooled" />
+                <ScalarProperty Name="Water_in_C_Sea_water_cooled" ColumnName="Water in C Sea water cooled" />
+                <ScalarProperty Name="Water_out_C_Sea_water_cooled" ColumnName="Water out C Sea water cooled" />
+                <ScalarProperty Name="Extra_factor_for_water_flow_at_60_humidity_fresh" ColumnName="Extra factor for water flow at 60 humidity fresh" />
+                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_back_bar_MPa_Serial" ColumnName="Minimum water inlet pressure with zero back bar MPa Serial" />
+                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_ba_bar_MPa_Parallel" ColumnName="Minimum water inlet pressure with zero ba bar MPa Parallel" />
+                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_back_Serial_sea" ColumnName="Minimum water inlet pressure with zero back Serial sea" />
+                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_back_Parallel_sea" ColumnName="Minimum water inlet pressure with zero back Parallel sea" />
+                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_back_bar_MPa_Oil" ColumnName="Minimum water inlet pressure with zero back bar MPa Oil" />
+                <ScalarProperty Name="Minimum_water_inlet_pressure_with_zero_back_bar_MPa_After" ColumnName="Minimum water inlet pressure with zero back bar MPa After" />
+                <ScalarProperty Name="Maximum_inlet_pressure_barg" ColumnName="Maximum inlet pressure barg" />
+                <ScalarProperty Name="Water_in_out_T2_T3" ColumnName="Water in out T2 T3" />
+                <ScalarProperty Name="Heat_dissipation_kW_EA" ColumnName="Heat dissipation kW EA" />
+                <ScalarProperty Name="Heat_dissipation_kW_EW" ColumnName="Heat dissipation kW EW" />
+                <ScalarProperty Name="Main_motor_F_class_IP_55_kW" ColumnName="Main motor F class IP 55 kW" />
                 <ScalarProperty Name="Main_motor_max_power" ColumnName="Main motor max power" />
                 <ScalarProperty Name="Main_motor_protection_details" ColumnName="Main motor protection details" />
                 <ScalarProperty Name="Main_motor_temperature_rise" ColumnName="Main motor temperature rise" />
-                <ScalarProperty Name="Speed_of_rotation__rpm_" ColumnName="Speed of rotation (rpm)" />
-                <ScalarProperty Name="Speed_of_rotation__rpm__min" ColumnName="Speed of rotation (rpm)_min" />
+                <ScalarProperty Name="Speed_of_rotation_rpm" ColumnName="Speed of rotation rpm" />
+                <ScalarProperty Name="Speed_of_rotation_rpm_min" ColumnName="Speed of rotation rpm min" />
                 <ScalarProperty Name="Motor_cos_fii" ColumnName="Motor cos fii" />
                 <ScalarProperty Name="Motor_efficiency" ColumnName="Motor efficiency" />
-                <ScalarProperty Name="Fan_motor__kW__EA" ColumnName="Fan motor (kW) EA" />
-                <ScalarProperty Name="Fan_motor__kW__EW" ColumnName="Fan motor (kW) EW" />
-                <ScalarProperty Name="Speed_of_rotation__rpm____fan_motor" ColumnName="Speed of rotation (rpm) - fan motor" />
+                <ScalarProperty Name="Fan_motor_kW_EA" ColumnName="Fan motor kW EA" />
+                <ScalarProperty Name="Fan_motor_kW_EW" ColumnName="Fan motor kW EW" />
+                <ScalarProperty Name="Speed_of_rotation_rpm__fan_motor" ColumnName="Speed of rotation rpm  fan motor" />
                 <ScalarProperty Name="Voltage_tolerance" ColumnName="Voltage tolerance" />
                 <ScalarProperty Name="Hydraulic_main_motor" ColumnName="Hydraulic main motor" />
-                <ScalarProperty Name="Hydraulic_motor_speed_of_rotation__Max_" ColumnName="Hydraulic motor speed of rotation (Max)" />
-                <ScalarProperty Name="Hydraulic_motor_speed_of_rotation__Min_" ColumnName="Hydraulic motor speed of rotation (Min)" />
-                <ScalarProperty Name="Hydraulic_oil_flow__l_min_" ColumnName="Hydraulic oil flow (l/min)" />
-                <ScalarProperty Name="Hydraulic_oil_flow__l_min__min" ColumnName="Hydraulic oil flow (l/min)_min" />
-                <ScalarProperty Name="Hydraulic_oil_pressure__bar_" ColumnName="Hydraulic oil pressure (bar)" />
-                <ScalarProperty Name="Hydraulic_oil_pressure__bar__min" ColumnName="Hydraulic oil pressure (bar)_min" />
-                <ScalarProperty Name="Fuse__max___1_Jännite__A" ColumnName="Fuse (max) (1 Jännite) A" />
-                <ScalarProperty Name="Fuse__max___2_Jännite__A" ColumnName="Fuse (max) (2 Jännite) A" />
-                <ScalarProperty Name="Starting_current_Ia_In_DOL___Y_D___SOFT_START" ColumnName="Starting current Ia/In DOL / Y/D / SOFT-START" />
-                <ScalarProperty Name="Control_voltage__V_" ColumnName="Control voltage (V)" />
-                <ScalarProperty Name="Oil_quantity__I_" ColumnName="Oil quantity (I)" />
-                <ScalarProperty Name="Oil_quantity_EA__I_" ColumnName="Oil quantity EA (I)" />
-                <ScalarProperty Name="Oil_content__mg_m__" ColumnName="Oil content (mg/m³)" />
+                <ScalarProperty Name="Hydraulic_motor_speed_of_rotation_Max" ColumnName="Hydraulic motor speed of rotation Max" />
+                <ScalarProperty Name="Hydraulic_motor_speed_of_rotation_Min" ColumnName="Hydraulic motor speed of rotation Min" />
+                <ScalarProperty Name="Hydraulic_oil_flow_l_min" ColumnName="Hydraulic oil flow l min" />
+                <ScalarProperty Name="Hydraulic_oil_flow_l_min_min" ColumnName="Hydraulic oil flow l min min" />
+                <ScalarProperty Name="Hydraulic_oil_pressure_bar" ColumnName="Hydraulic oil pressure bar" />
+                <ScalarProperty Name="Hydraulic_oil_pressure_bar_min" ColumnName="Hydraulic oil pressure bar min" />
+                <ScalarProperty Name="Fuse_max_1_Jännite_A" ColumnName="Fuse max 1 Jännite A" />
+                <ScalarProperty Name="Fuse_max_2_Jännite_A" ColumnName="Fuse max 2 Jännite A" />
+                <ScalarProperty Name="Starting_current_Ia_In_DOL_YD_SOFT_START" ColumnName="Starting current Ia In DOL YD SOFT START" />
+                <ScalarProperty Name="Control_voltage_V" ColumnName="Control voltage V" />
+                <ScalarProperty Name="Oil_quantity_I" ColumnName="Oil quantity I" />
+                <ScalarProperty Name="Oil_quantity_EA_I" ColumnName="Oil quantity EA I" />
+                <ScalarProperty Name="Oil_content_mg_m" ColumnName="Oil content mg m" />
                 <ScalarProperty Name="Air_outlet_T1" ColumnName="Air outlet T1" />
-                <ScalarProperty Name="Air_outlet_T1_water_cooled" ColumnName="Air outlet T1_water cooled" />
+                <ScalarProperty Name="Air_outlet_T1_water_cooled" ColumnName="Air outlet T1 water cooled" />
                 <ScalarProperty Name="Condensate_drain_T4" ColumnName="Condensate drain T4" />
-                <ScalarProperty Name="Pressure_Level__LpA__without_canopy_EA" ColumnName="Pressure Level (LpA) without canopy EA" />
-                <ScalarProperty Name="Pressure_Level__LpA__without_canopy_EW" ColumnName="Pressure Level (LpA) without canopy EW" />
-                <ScalarProperty Name="Pressure_Level__LpA__with_NOVOX_canopy_EA" ColumnName="Pressure Level (LpA) with NOVOX canopy EA" />
-                <ScalarProperty Name="Pressure_Level__LpA__with_NOVOX_canopy_EW" ColumnName="Pressure Level (LpA) with NOVOX canopy EW" />
-                <ScalarProperty Name="Uncertainty_Kpa___Kwa" ColumnName="Uncertainty Kpa / Kwa" />
+                <ScalarProperty Name="Pressure_Level_LpA_without_canopy_EA" ColumnName="Pressure Level LpA without canopy EA" />
+                <ScalarProperty Name="Pressure_Level_LpA_without_canopy_EW" ColumnName="Pressure Level LpA without canopy EW" />
+                <ScalarProperty Name="Pressure_Level_LpA_with_NOVOX_canopy_EA" ColumnName="Pressure Level LpA with NOVOX canopy EA" />
+                <ScalarProperty Name="Pressure_Level_LpA_with_NOVOX_canopy_EW" ColumnName="Pressure Level LpA with NOVOX canopy EW" />
+                <ScalarProperty Name="Uncertainty_Kpa_Kwa" ColumnName="Uncertainty Kpa Kwa" />
                 <ScalarProperty Name="Weight_without_canopy" ColumnName="Weight without canopy" />
                 <ScalarProperty Name="Weight_with_NOVOX_canopy" ColumnName="Weight with NOVOX canopy" />
                 <ScalarProperty Name="Weight_with_NOVOX_canopy_EA" ColumnName="Weight with NOVOX canopy EA" />
@@ -471,14 +472,14 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
                 <ScalarProperty Name="General_arrangement_drawing_with_NOVOX_canopy_EW" ColumnName="General arrangement drawing with NOVOX canopy EW" />
                 <ScalarProperty Name="General_arrangement_drawing_with_NOVOX_canopy_EW_SW" ColumnName="General arrangement drawing with NOVOX canopy EW SW" />
                 <ScalarProperty Name="Cable_gland__Power" ColumnName="Cable gland: Power" />
-                <ScalarProperty Name="Cable_gland__Alarm___Signal" ColumnName="Cable gland: Alarm / Signal" />
+                <ScalarProperty Name="Cable_gland_Alarm_Signal" ColumnName="Cable gland Alarm Signal" />
                 <ScalarProperty Name="Lisätietoja" ColumnName="Lisätietoja" />
                 <ScalarProperty Name="Suunnittelun_kommentit" ColumnName="Suunnittelun kommentit" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Jälkijäähdytinteho_korjauskerroin">
-            <EntityTypeMapping TypeName="MarinedataModel.Jälkijäähdytinteho_korjauskerroin">
+            <EntityTypeMapping TypeName="MarineDataModel.Jälkijäähdytinteho_korjauskerroin">
               <MappingFragment StoreEntitySet="Jälkijäähdytinteho korjauskerroin">
                 <ScalarProperty Name="Tunniste" ColumnName="Tunniste" />
                 <ScalarProperty Name="Maximum_working_pressure__barg_" ColumnName="Maximum working pressure (barg)" />

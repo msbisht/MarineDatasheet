@@ -9,7 +9,7 @@ namespace MarineDataSheet.Controllers
 {
     public class ViewDashboardController : Controller
     {
-        MarinedataEntities dbobje = new MarinedataEntities();
+        MarineDataEntities dbobje = new MarineDataEntities();
         private static log4net.ILog Log { get; set; }
         ILog log = log4net.LogManager.GetLogger(typeof(ViewDashboardController));
         // GET: ViewDashboard

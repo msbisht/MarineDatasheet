@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -17,6 +19,12 @@ namespace MarineDataSheet
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             log4net.Config.XmlConfigurator.Configure();
+           
+            //SqlDependency.Start(ConfigurationManager.ConnectionStrings["MarineDataEntities"].ToString());
         }
+
+       
+
+
     }
 }

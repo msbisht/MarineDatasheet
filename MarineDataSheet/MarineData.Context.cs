@@ -13,10 +13,10 @@ namespace MarineDataSheet
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MarinedataEntities : DbContext
+    public partial class MarineDataEntities : DbContext
     {
-        public MarinedataEntities()
-            : base("name=MarinedataEntities")
+        public MarineDataEntities()
+            : base("name=MarineDataEntities")
         {
         }
     

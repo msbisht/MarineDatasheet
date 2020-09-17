@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d4e8ff8c87ee471e81d2bf97f98c3071" Name="Diagram1" ZoomLevel="32">
-        <EntityTypeShape EntityType="MarinedataModel.Datum" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MarinedataModel.Jälkijäähdytinteho_korjauskerroin" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="7fc229387d07449e95fda0bda72ad450" Name="Diagram1" ZoomLevel="32">
+        <EntityTypeShape EntityType="MarineDataModel.Datum" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MarineDataModel.Jälkijäähdytinteho_korjauskerroin" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
