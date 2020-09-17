@@ -27,13 +27,13 @@ namespace MarineDataSheet.Controllers
             try
             {
                 Datum tblobj = new Datum();
-                tblobj.Datasivun_numero = model.Datasivun_numero;
+               
                 tblobj.STD = model.STD;
                 tblobj.Datasivun_numero = "TEST"+ model.Datasivun_numero; 
                 tblobj.Datasheet_status = model.Datasheet_status;
                 tblobj.Code = model.Code;
                 tblobj.Datasheet_created_by = model.Datasheet_created_by;
-                tblobj.Model = model.Model;
+                tblobj.Model_No = model.Model_No;
                 tblobj.Maximum_working_pressure_barg = model.Maximum_working_pressure_barg;
                 tblobj.Cooling = model.Cooling;
                 tblobj.C1_Voltage = model.C1_Voltage;

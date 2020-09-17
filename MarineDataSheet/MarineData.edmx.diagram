@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7fc229387d07449e95fda0bda72ad450" Name="Diagram1" ZoomLevel="32">
+      <Diagram DiagramId="651c9a3c54f34159b786e7db7bbcd68a" Name="Diagram1" ZoomLevel="32">
         <EntityTypeShape EntityType="MarineDataModel.Datum" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MarineDataModel.Jälkijäähdytinteho_korjauskerroin" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>

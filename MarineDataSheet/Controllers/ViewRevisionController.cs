@@ -47,7 +47,7 @@ namespace MarineDataSheet.Controllers
                     }
                     if (!string.IsNullOrEmpty(searchValue))
                     {
-                        dv = dv.Where(m => m.Datasivun_numero == searchValue || m.Code == searchValue || m.Model == searchValue);
+                        dv = dv.Where(m => m.Datasivun_numero == searchValue || m.Code == searchValue || m.Model_No == searchValue);
                     }
 
                     totalRecords = dv.Count();

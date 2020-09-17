@@ -17,7 +17,7 @@
           <Property Name="Datasheet status" Type="nvarchar" MaxLength="50" />
           <Property Name="Code" Type="nvarchar" MaxLength="50" />
           <Property Name="Datasheet created by" Type="nvarchar" MaxLength="50" />
-          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model_No" Type="nvarchar" MaxLength="50" />
           <Property Name="Maximum working pressure barg" Type="float" />
           <Property Name="Cooling" Type="nvarchar" MaxLength="50" />
           <Property Name="1 Voltage" Type="nvarchar" MaxLength="50" />
@@ -249,7 +249,7 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
           <Property Name="Datasheet_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Datasheet_created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Model_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Maximum_working_pressure_barg" Type="Double" />
           <Property Name="Cooling" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="C1_Voltage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -377,7 +377,7 @@ warning 6013: The table/view 'MarineData.dbo.Paste Errors' does not have a prima
                 <ScalarProperty Name="Datasheet_status" ColumnName="Datasheet status" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Datasheet_created_by" ColumnName="Datasheet created by" />
-                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Model_No" ColumnName="Model_No" />
                 <ScalarProperty Name="Maximum_working_pressure_barg" ColumnName="Maximum working pressure barg" />
                 <ScalarProperty Name="Cooling" ColumnName="Cooling" />
                 <ScalarProperty Name="C1_Voltage" ColumnName="1 Voltage" />

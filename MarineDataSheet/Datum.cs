@@ -22,7 +22,7 @@ namespace MarineDataSheet
         public string Datasheet_status { get; set; }
         public string Code { get; set; }
         public string Datasheet_created_by { get; set; }
-        public string Model { get; set; }
+        public string Model_No { get; set; }
         public Nullable<double> Maximum_working_pressure_barg { get; set; }
         public string Cooling { get; set; }
         public string C1_Voltage { get; set; }
